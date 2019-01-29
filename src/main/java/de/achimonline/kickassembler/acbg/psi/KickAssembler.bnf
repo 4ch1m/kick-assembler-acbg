@@ -1,0 +1,37 @@
+{
+    parserClass="de.achimonline.kickassembler.acbg.parser.KickAssemblerParser"
+
+    extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+    psiClassPrefix="KickAssembler"
+    psiImplClassSuffix="Impl"
+    psiPackage="de.achimonline.kickassembler.acbg.psi"
+    psiImplPackage="de.achimonline.kickassembler.acbg.psi.impl"
+
+    elementTypeHolderClass="de.achimonline.kickassembler.acbg.psi.KickAssemblerTypes"
+    elementTypeClass="de.achimonline.kickassembler.acbg.psi.KickAssemblerElementType"
+    tokenTypeClass="de.achimonline.kickassembler.acbg.psi.KickAssemblerTokenType"
+}
+
+// borrowed from ...
+//      https://github.com/JustSid/x86-64ASM-IntelliJ/blob/master/src/com/widerwille/x86/x86.bnf
+
+kickAssemblerFile ::= root_rule_*
+
+private root_rule_ ::= (registers|instructions|STRING|LEFT_PAREN|RIGHT_PAREN|SLASH|BACKSLASH|STAR|COLON|SEMICOLON|DOT|COMMA|LEFT_ANGLE|RIGHT_ANGLE|IDENTIFIER|VALUE|LABEL|PREPROCESSOR|COMMENT_LINE|COMMENT_BLOCK)
+private registers ::= (REGISTER_GENERAL|REGISTER_SEGMENT|REGISTER_SPECIAL)
+
+
+private segment ::= REGISTER_SEGMENT COLON VALUE
+private argument ::= segment | LEFT_PAREN [STAR] registers RIGHT_PAREN | [STAR] registers | VALUE | IDENTIFIER
+
+instructionCall ::= [INSTRUCTION_PREFIX] INSTRUCTION
+instructionUnary ::= [INSTRUCTION_PREFIX] INSTRUCTION (addressOperand | argument)
+instructionBinary ::= [INSTRUCTION_PREFIX] INSTRUCTION (addressOperand | argument) COMMA argument
+
+private baseOffsetMultiplier ::= (registers COMMA registers COMMA (VALUE | IDENTIFIER))
+private offsetMultiplier ::= (COMMA registers COMMA (VALUE | IDENTIFIER))
+
+addressOperand ::= [VALUE] LEFT_PAREN (baseOffsetMultiplier | offsetMultiplier | registers) RIGHT_PAREN
+
+private instructions ::= (instructionBinary|instructionUnary|instructionCall)

@@ -1,0 +1,43 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '0.4.2'
+}
+
+group 'de.achimonline'
+version 0.1
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.4'
+    annotationProcessor 'org.projectlombok:lombok:1.18.4'
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:2.23.4'
+    testCompile 'org.powermock:powermock-api-mockito2:2.0.0'
+    testCompile 'org.powermock:powermock-module-junit4:2.0.0'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src/main/gen'
+            srcDir 'src/main/java'
+        }
+    }
+}    
+    
+intellij {
+    version '2018.2.5'
+    pluginName 'kick-assembler-acbg'
+    updateSinceUntilBuild false
+}
+
+publishPlugin {
+    username intellijPublishUsername
+    password intellijPublishPassword
+}
