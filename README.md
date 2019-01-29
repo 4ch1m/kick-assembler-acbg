@@ -1,7 +1,7 @@
 ![Kick Assembler - ACBG](/src/main/resources/icons/icon_64x64.png?raw=true) ![Retro Rules](/src/main/resources/retro_rules_564x64.png?raw=true)
 
 # Kick Assembler <small><small><small>(... and chew bubble gum)</small></small></small>
-> A [Kick Assembler](http://theweb.dk/KickAssembler) language plugin for IntelliJ IDEA [IntelliJ IDEA](https://www.jetbrains.com/idea/).
+> A [Kick Assembler](http://theweb.dk/KickAssembler) language plugin for [IntelliJ IDEA](https://www.jetbrains.com/idea/).
 
 ##### Build Status
 [![Build Status](https://travis-ci.org/4ch1m/kick-assembler-acbg.svg?branch=master)](https://travis-ci.org/4ch1m/ChangelistOrganizer)
