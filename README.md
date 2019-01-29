@@ -93,7 +93,7 @@ The JRE - used to run Kick Assembler - can be chosen via <kbd>File</kbd> &rarr; 
 
 (Otherwise IntelliJ's internal JRE will be used.)
 
-![setup_run_configuration](/screenshots/setup_run_configuration.png?raw=true)
+![setup_run_configuration](/screenshots/setup_jre.png?raw=true)
 
 ## FAQs
 
