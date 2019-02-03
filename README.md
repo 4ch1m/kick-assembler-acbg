@@ -3,13 +3,15 @@
 # Kick Assembler <small><small><small>(... and chew bubble gum)</small></small></small>
 > A [Kick Assembler](http://theweb.dk/KickAssembler) language plugin for [IntelliJ IDEA](https://www.jetbrains.com/idea/).
 
+![editor](/screenshots/editor.png?raw=true)
+
 ##### Build Status
 [![Build Status](https://travis-ci.org/4ch1m/kick-assembler-acbg.svg?branch=master)](https://travis-ci.org/4ch1m/ChangelistOrganizer)
 
 ## Disclaimer
 
 This plugin is still at an early stage of development.
-Not all of the planned features are implemented or working as expected at this point.
+Not all of the planned features are implemented or work as expected at this point.
 Any help or contributions (bug reports, pull requests, etc.) are much appreciated. 
 
 ## Features
@@ -41,15 +43,15 @@ Here's how to use/setup the plugin &hellip;
 
 ### Project
 
-Simply create a new `Empty Project` and complete all following steps to finish the project initialization.
+Simply create a new `Kick Assember project` and complete all following steps to finish the project initialization.
 
-![setup_empty_project](/screenshots/setup_empty_project.png?raw=true)
+![new_project](/screenshots/new_project.png?raw=true)
 
 ### JRE and SDK
 
 In the project's setup-page create a new Kick Assembler SDK:
 
-![setup_new_sdk](/screenshots/setup_new_sdk.png?raw=true)
+![setup_project_sdk](/screenshots/setup_project_sdk.png?raw=true)
 
 (Navigate to your Kick Assembler installation directory and click <kbd>OK</kbd>.)
 
@@ -57,15 +59,15 @@ In the project's setup-page create a new Kick Assembler SDK:
 
 New Kick Assembler files can be created via <kbd>File</kbd> &rarr; <kbd>New</kbd> &rarr; <kbd>Kick Assembler file</kbd>.
 
-![setup_new_file](/screenshots/setup_new_file.png?raw=true)
+![new_file](/screenshots/new_file.png?raw=true)
 
-(&hellip; generating a `BasicUpstart2` stub.)
+(Which provides a `BasicUpstart2` stub.)
 
 ### Run Configuration
 
 Run Configurations can be used to invoke Kick Assembler with a selected source-file:
 
-![setup_run_configuration](/screenshots/setup_run_configuration.png?raw=true)
+![run_configuration](/screenshots/run_configuration.png?raw=true)
 
 IntelliJ's built-in [macros](https://github.com/JetBrains/intellij-community/tree/master/platform/lang-impl/src/com/intellij/ide/macro) can be combined with for your individual `Program parameters`: 
 
@@ -93,7 +95,7 @@ The JRE - used to run Kick Assembler - can be chosen via <kbd>File</kbd> &rarr; 
 
 (Otherwise IntelliJ's internal JRE will be used.)
 
-![setup_run_configuration](/screenshots/setup_jre.png?raw=true)
+![setup_jre](/screenshots/setup_jre.png?raw=true)
 
 ## FAQs
 
@@ -101,9 +103,9 @@ The JRE - used to run Kick Assembler - can be chosen via <kbd>File</kbd> &rarr; 
 
 IntelliJ has a neat feature called  [External Tools](https://www.jetbrains.com/help/idea/settings-tools-external-tools.html). It can be used to run third-party tools on (selected) files.
 
-![external_tool_vice](/screenshots/external_tool_vice.png?raw=true)
+![external_tools_vice](/screenshots/external_tools_vice.png?raw=true)
 
-<strong>NOTE:</strong> The `Arguments:` not only include the `$FileName$`-macro, but can also include any additional VICE arguments as needed.
+<strong>NOTE:</strong> The `Arguments:` not only contains the `$FileName$`-macro, but can also include any additional VICE arguments as needed.
 
 VICE then easily can be run via the context-menu by right-clicking on a `*.prg` file.
 
@@ -111,7 +113,7 @@ You even can assign a keyboard shortcut for VICE!
 
 Just go to <kbd>File</kbd> &rarr; <kbd>Settings&hellip;</kbd> &rarr; <kbd>Keymap</kbd>; search for `External Tools`; and set a shortcut of your liking. (This will allow you to simply mark a `*.prg`-file and press <kbd>Alt+V</kbd> to run VICE.)
 
-![external_tool_keymap](/screenshots/external_tool_keymap.png?raw=true)
+![keymap_vice](/screenshots/keymap_vice.png?raw=true)
 
 ---
 
