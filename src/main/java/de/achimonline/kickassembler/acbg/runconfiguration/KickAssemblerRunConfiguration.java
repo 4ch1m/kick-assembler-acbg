@@ -87,6 +87,8 @@ public class KickAssemblerRunConfiguration extends ModuleBasedConfiguration {
     }
 
     protected static class KickAssemblerProgramParameters implements CommonProgramRunConfigurationParameters {
+        public static final Macro PROJECT_FILE_DIR_MACRO = new ProjectFileDirMacro();
+
         private static final String DEFAULT_PROGRAM_PARAMETERS = createDefaultProgramParameters();
 
         private String programParameters;
@@ -148,10 +150,13 @@ public class KickAssemblerRunConfiguration extends ModuleBasedConfiguration {
         }
 
         private static String createDefaultProgramParameters() {
-            Macro projectFileDirMacro = new ProjectFileDirMacro();
-
             return new StringBuilder()
-                    .append("-symbolfiledir $").append(projectFileDirMacro.getName()).append("$").append(File.separator).append("sym")
+                    .append("-symbolfiledir ")
+                    .append("$").append(PROJECT_FILE_DIR_MACRO.getName()).append("$")
+                    .append(File.separator)
+                    .append("out")
+                    .append(File.separator)
+                    .append("sym")
                     .toString();
         }
     }
