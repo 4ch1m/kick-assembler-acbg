@@ -56,7 +56,15 @@
         <runConfigurationProducer
                 implementation="de.achimonline.kickassembler.acbg.runconfiguration.KickAssemblerRunConfigurationProducer"/>
 
-        <internalFileTemplate name="Kick Assembler file"/>
+        <moduleType
+                id="KickAssemblerModule"
+                implementationClass="de.achimonline.kickassembler.acbg.module.KickAssemblerModuleType"/>
+
+        <projectTemplatesFactory
+                implementation="de.achimonline.kickassembler.acbg.project.KickAssemblerProjectTemplatesFactory"/>
+
+        <internalFileTemplate
+                name="Kick Assembler file"/>
 
     </extensions>
 

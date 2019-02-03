@@ -19,9 +19,9 @@ In addition to the IntelliJ's wide range of built-in functionality (like version
 * Syntax Highlighting :wrench:
 * Run Configurations :heavy_check_mark:
 * SDK Management :heavy_check_mark:
+* Project Generation :heavy_check_mark:
 * "New File" Template :heavy_check_mark:
 * Refactoring Functionality :construction:
-* "New Project" Generation :construction:
 
 ## Prerequisites
 * [Java Runtime Environment](https://www.java.com/en/download/)
