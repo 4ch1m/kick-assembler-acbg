@@ -105,7 +105,7 @@ IntelliJ has a neat feature called  [External Tools](https://www.jetbrains.com/h
 
 ![external_tools_vice](/screenshots/external_tools_vice.png?raw=true)
 
-<strong>NOTE:</strong> The `Arguments:` not only contains the `$FileName$`-macro, but can also include any additional VICE arguments as needed.
+<strong>NOTE:</strong> The `Arguments:`-field not only contains the `$FileName$`-macro, but can also include any additional VICE arguments as needed.
 
 VICE then easily can be run via the context-menu by right-clicking on a `*.prg` file.
 
