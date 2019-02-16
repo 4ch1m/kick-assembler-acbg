@@ -7,19 +7,7 @@ import com.intellij.psi.PsiElement;
 
 public class KickAssemblerVisitor extends PsiElementVisitor {
 
-  public void visitAddressOperand(@NotNull KickAssemblerAddressOperand o) {
-    visitPsiElement(o);
-  }
-
-  public void visitInstructionBinary(@NotNull KickAssemblerInstructionBinary o) {
-    visitPsiElement(o);
-  }
-
-  public void visitInstructionCall(@NotNull KickAssemblerInstructionCall o) {
-    visitPsiElement(o);
-  }
-
-  public void visitInstructionUnary(@NotNull KickAssemblerInstructionUnary o) {
+  public void visitRoot(@NotNull KickAssemblerRoot o) {
     visitPsiElement(o);
   }
 

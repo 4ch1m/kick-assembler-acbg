@@ -13,25 +13,57 @@
     tokenTypeClass="de.achimonline.kickassembler.acbg.psi.KickAssemblerTokenType"
 }
 
-// borrowed from ...
-//      https://github.com/JustSid/x86-64ASM-IntelliJ/blob/master/src/com/widerwille/x86/x86.bnf
+kickAssemblerFile ::= root*
 
-kickAssemblerFile ::= root_rule_*
+root ::= ( STRING |
+           NUMBER |
 
-private root_rule_ ::= (registers|instructions|STRING|LEFT_PAREN|RIGHT_PAREN|SLASH|BACKSLASH|STAR|COLON|SEMICOLON|DOT|COMMA|LEFT_ANGLE|RIGHT_ANGLE|IDENTIFIER|VALUE|LABEL|PREPROCESSOR|COMMENT_LINE|COMMENT_BLOCK)
-private registers ::= (REGISTER_GENERAL|REGISTER_SEGMENT|REGISTER_SPECIAL)
+           LEFT_PARENTHESES |
+           RIGHT_PARENTHESES |
+           LEFT_BRACKET |
+           RIGHT_BRACKET |
+           LEFT_BRACE |
+           RIGHT_BRACE |
 
+           HASH |
+           ASSIGN |
+           COMMA |
+           SEMICOLON |
+           LESS_EQUALS |
+           GREATER_EQUALS |
+           LESS |
+           GREATER |
+           BIT_AND |
+           BIT_OR |
+           BIT_XOR |
+           BIT_NOT |
+           SHIFT_LEFT |
+           SHIFT_RIGHT |
+           PLUS |
+           MINUS |
+           TIMES |
+           DIVIDE |
+           NOT_EQUAL |
+           EQUAL |
+           AND |
+           OR |
+           NOT |
+           PLUS_PLUS |
+           MINUS_MINUS |
+           PLUS_EQUAL |
+           MINUS_EQUAL |
+           TIMES_EQUAL |
+           DIVIDE_EQUAL |
+           DOT |
+           COLON |
+           QUESTION_MARK |
 
-private segment ::= REGISTER_SEGMENT COLON VALUE
-private argument ::= segment | LEFT_PAREN [STAR] registers RIGHT_PAREN | [STAR] registers | VALUE | IDENTIFIER
+           BASIC_UPSTART |
+           PREPROCESSOR |
+           LABEL |
+           LOCAL_LABEL |
+           MNEMONIC |
+           COMMENT_LINE |
+           COMMENT_BLOCK |
 
-instructionCall ::= [INSTRUCTION_PREFIX] INSTRUCTION
-instructionUnary ::= [INSTRUCTION_PREFIX] INSTRUCTION (addressOperand | argument)
-instructionBinary ::= [INSTRUCTION_PREFIX] INSTRUCTION (addressOperand | argument) COMMA argument
-
-private baseOffsetMultiplier ::= (registers COMMA registers COMMA (VALUE | IDENTIFIER))
-private offsetMultiplier ::= (COMMA registers COMMA (VALUE | IDENTIFIER))
-
-addressOperand ::= [VALUE] LEFT_PAREN (baseOffsetMultiplier | offsetMultiplier | registers) RIGHT_PAREN
-
-private instructions ::= (instructionBinary|instructionUnary|instructionCall)
+           DUMMY )

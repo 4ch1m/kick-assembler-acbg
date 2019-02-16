@@ -8,49 +8,62 @@ import de.achimonline.kickassembler.acbg.psi.impl.*;
 
 public interface KickAssemblerTypes {
 
-  IElementType ADDRESS_OPERAND = new KickAssemblerElementType("ADDRESS_OPERAND");
-  IElementType INSTRUCTION_BINARY = new KickAssemblerElementType("INSTRUCTION_BINARY");
-  IElementType INSTRUCTION_CALL = new KickAssemblerElementType("INSTRUCTION_CALL");
-  IElementType INSTRUCTION_UNARY = new KickAssemblerElementType("INSTRUCTION_UNARY");
+  IElementType ROOT = new KickAssemblerElementType("ROOT");
 
-  IElementType BACKSLASH = new KickAssemblerTokenType("BACKSLASH");
+  IElementType AND = new KickAssemblerTokenType("AND");
+  IElementType ASSIGN = new KickAssemblerTokenType("ASSIGN");
+  IElementType BASIC_UPSTART = new KickAssemblerTokenType("BASIC_UPSTART");
+  IElementType BIT_AND = new KickAssemblerTokenType("BIT_AND");
+  IElementType BIT_NOT = new KickAssemblerTokenType("BIT_NOT");
+  IElementType BIT_OR = new KickAssemblerTokenType("BIT_OR");
+  IElementType BIT_XOR = new KickAssemblerTokenType("BIT_XOR");
   IElementType COLON = new KickAssemblerTokenType("COLON");
   IElementType COMMA = new KickAssemblerTokenType("COMMA");
   IElementType COMMENT_BLOCK = new KickAssemblerTokenType("COMMENT_BLOCK");
   IElementType COMMENT_LINE = new KickAssemblerTokenType("COMMENT_LINE");
+  IElementType DIVIDE = new KickAssemblerTokenType("DIVIDE");
+  IElementType DIVIDE_EQUAL = new KickAssemblerTokenType("DIVIDE_EQUAL");
   IElementType DOT = new KickAssemblerTokenType("DOT");
-  IElementType IDENTIFIER = new KickAssemblerTokenType("IDENTIFIER");
-  IElementType INSTRUCTION = new KickAssemblerTokenType("INSTRUCTION");
-  IElementType INSTRUCTION_PREFIX = new KickAssemblerTokenType("INSTRUCTION_PREFIX");
+  IElementType DUMMY = new KickAssemblerTokenType("DUMMY");
+  IElementType EQUAL = new KickAssemblerTokenType("EQUAL");
+  IElementType GREATER = new KickAssemblerTokenType("GREATER");
+  IElementType GREATER_EQUALS = new KickAssemblerTokenType("GREATER_EQUALS");
+  IElementType HASH = new KickAssemblerTokenType("HASH");
   IElementType LABEL = new KickAssemblerTokenType("LABEL");
-  IElementType LEFT_ANGLE = new KickAssemblerTokenType("LEFT_ANGLE");
-  IElementType LEFT_PAREN = new KickAssemblerTokenType("LEFT_PAREN");
+  IElementType LEFT_BRACE = new KickAssemblerTokenType("LEFT_BRACE");
+  IElementType LEFT_BRACKET = new KickAssemblerTokenType("LEFT_BRACKET");
+  IElementType LEFT_PARENTHESES = new KickAssemblerTokenType("LEFT_PARENTHESES");
+  IElementType LESS = new KickAssemblerTokenType("LESS");
+  IElementType LESS_EQUALS = new KickAssemblerTokenType("LESS_EQUALS");
+  IElementType LOCAL_LABEL = new KickAssemblerTokenType("LOCAL_LABEL");
+  IElementType MINUS = new KickAssemblerTokenType("MINUS");
+  IElementType MINUS_EQUAL = new KickAssemblerTokenType("MINUS_EQUAL");
+  IElementType MINUS_MINUS = new KickAssemblerTokenType("MINUS_MINUS");
+  IElementType MNEMONIC = new KickAssemblerTokenType("MNEMONIC");
+  IElementType NOT = new KickAssemblerTokenType("NOT");
+  IElementType NOT_EQUAL = new KickAssemblerTokenType("NOT_EQUAL");
+  IElementType NUMBER = new KickAssemblerTokenType("NUMBER");
+  IElementType OR = new KickAssemblerTokenType("OR");
+  IElementType PLUS = new KickAssemblerTokenType("PLUS");
+  IElementType PLUS_EQUAL = new KickAssemblerTokenType("PLUS_EQUAL");
+  IElementType PLUS_PLUS = new KickAssemblerTokenType("PLUS_PLUS");
   IElementType PREPROCESSOR = new KickAssemblerTokenType("PREPROCESSOR");
-  IElementType REGISTER_GENERAL = new KickAssemblerTokenType("REGISTER_GENERAL");
-  IElementType REGISTER_SEGMENT = new KickAssemblerTokenType("REGISTER_SEGMENT");
-  IElementType REGISTER_SPECIAL = new KickAssemblerTokenType("REGISTER_SPECIAL");
-  IElementType RIGHT_ANGLE = new KickAssemblerTokenType("RIGHT_ANGLE");
-  IElementType RIGHT_PAREN = new KickAssemblerTokenType("RIGHT_PAREN");
+  IElementType QUESTION_MARK = new KickAssemblerTokenType("QUESTION_MARK");
+  IElementType RIGHT_BRACE = new KickAssemblerTokenType("RIGHT_BRACE");
+  IElementType RIGHT_BRACKET = new KickAssemblerTokenType("RIGHT_BRACKET");
+  IElementType RIGHT_PARENTHESES = new KickAssemblerTokenType("RIGHT_PARENTHESES");
   IElementType SEMICOLON = new KickAssemblerTokenType("SEMICOLON");
-  IElementType SLASH = new KickAssemblerTokenType("SLASH");
-  IElementType STAR = new KickAssemblerTokenType("STAR");
+  IElementType SHIFT_LEFT = new KickAssemblerTokenType("SHIFT_LEFT");
+  IElementType SHIFT_RIGHT = new KickAssemblerTokenType("SHIFT_RIGHT");
   IElementType STRING = new KickAssemblerTokenType("STRING");
-  IElementType VALUE = new KickAssemblerTokenType("VALUE");
+  IElementType TIMES = new KickAssemblerTokenType("TIMES");
+  IElementType TIMES_EQUAL = new KickAssemblerTokenType("TIMES_EQUAL");
 
   class Factory {
     public static PsiElement createElement(ASTNode node) {
       IElementType type = node.getElementType();
-      if (type == ADDRESS_OPERAND) {
-        return new KickAssemblerAddressOperandImpl(node);
-      }
-      else if (type == INSTRUCTION_BINARY) {
-        return new KickAssemblerInstructionBinaryImpl(node);
-      }
-      else if (type == INSTRUCTION_CALL) {
-        return new KickAssemblerInstructionCallImpl(node);
-      }
-      else if (type == INSTRUCTION_UNARY) {
-        return new KickAssemblerInstructionUnaryImpl(node);
+      if (type == ROOT) {
+        return new KickAssemblerRootImpl(node);
       }
       throw new AssertionError("Unknown element type: " + type);
     }
