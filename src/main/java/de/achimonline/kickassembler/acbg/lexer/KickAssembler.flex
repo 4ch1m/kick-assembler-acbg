@@ -27,8 +27,6 @@ BIN_LITERAL = "%"[0-1]+(_+[0-1]+)*
 LABEL = ([a-zA-Z_][a-zA-Z0-9_]*)
 LOCAL_LABEL = "!"{LABEL}?[+-]
 
-BASIC_UPSTART_2 = "BasicUpstart2"\({LABEL}\)
-
 LINE_COMMENT  = "//"[^\r\n]*
 BLOCK_COMMENT = "/*"([^"*"]|("*"+[^"*""/"]))*("*"+"/")?
 
@@ -39,7 +37,7 @@ BLOCK_COMMENT = "/*"([^"*"]|("*"+[^"*""/"]))*("*"+"/")?
 
     \"([^\"\r\n])*\" { return KickAssemblerTypes.STRING; }
 
-    {BASIC_UPSTART_2} { return KickAssemblerTypes.BASIC_UPSTART; }
+    "BasicUpstart2" { return KickAssemblerTypes.BASIC_UPSTART; }
 
     "#define"     { return KickAssemblerTypes.PREPROCESSOR; }
     "#elif"       { return KickAssemblerTypes.PREPROCESSOR; }
@@ -50,6 +48,55 @@ BLOCK_COMMENT = "/*"([^"*"]|("*"+[^"*""/"]))*("*"+"/")?
     "#importif"   { return KickAssemblerTypes.PREPROCESSOR; }
     "#importonce" { return KickAssemblerTypes.PREPROCESSOR; }
     "#undef"      { return KickAssemblerTypes.PREPROCESSOR; }
+
+    ".align"         { return KickAssemblerTypes.DIRECTIVE; }
+    ".assert"        { return KickAssemblerTypes.DIRECTIVE; }
+    ".asserterror"   { return KickAssemblerTypes.DIRECTIVE; }
+    ".break"         { return KickAssemblerTypes.DIRECTIVE; }
+    ".by"            { return KickAssemblerTypes.DIRECTIVE; }
+    ".byte"          { return KickAssemblerTypes.DIRECTIVE; }
+    ".const"         { return KickAssemblerTypes.DIRECTIVE; }
+    ".define"        { return KickAssemblerTypes.DIRECTIVE; }
+    ".disk"          { return KickAssemblerTypes.DIRECTIVE; }
+    ".dw"            { return KickAssemblerTypes.DIRECTIVE; }
+    ".dword"         { return KickAssemblerTypes.DIRECTIVE; }
+    ".encoding"      { return KickAssemblerTypes.DIRECTIVE; }
+    ".enum"          { return KickAssemblerTypes.DIRECTIVE; }
+    ".error"         { return KickAssemblerTypes.DIRECTIVE; }
+    ".errorif"       { return KickAssemblerTypes.DIRECTIVE; }
+    ".eval"          { return KickAssemblerTypes.DIRECTIVE; }
+    ".file"          { return KickAssemblerTypes.DIRECTIVE; }
+    ".filemodify"    { return KickAssemblerTypes.DIRECTIVE; }
+    ".filenamespace" { return KickAssemblerTypes.DIRECTIVE; }
+    ".fill"          { return KickAssemblerTypes.DIRECTIVE; }
+    ".for"           { return KickAssemblerTypes.DIRECTIVE; }
+    ".function"      { return KickAssemblerTypes.DIRECTIVE; }
+    ".if"            { return KickAssemblerTypes.DIRECTIVE; }
+    ".import"        { return KickAssemblerTypes.DIRECTIVE; }
+    ".importonce"    { return KickAssemblerTypes.DIRECTIVE; }
+    ".label"         { return KickAssemblerTypes.DIRECTIVE; }
+    ".macro"         { return KickAssemblerTypes.DIRECTIVE; }
+    ".memblock"      { return KickAssemblerTypes.DIRECTIVE; }
+    ".modify"        { return KickAssemblerTypes.DIRECTIVE; }
+    ".namespace"     { return KickAssemblerTypes.DIRECTIVE; }
+    ".pc"            { return KickAssemblerTypes.DIRECTIVE; }
+    ".plugin"        { return KickAssemblerTypes.DIRECTIVE; }
+    ".print"         { return KickAssemblerTypes.DIRECTIVE; }
+    ".printnow"      { return KickAssemblerTypes.DIRECTIVE; }
+    ".pseudocommand" { return KickAssemblerTypes.DIRECTIVE; }
+    ".pseudopc"      { return KickAssemblerTypes.DIRECTIVE; }
+    ".return"        { return KickAssemblerTypes.DIRECTIVE; }
+    ".segment"       { return KickAssemblerTypes.DIRECTIVE; }
+    ".segmentdef"    { return KickAssemblerTypes.DIRECTIVE; }
+    ".segmentout"    { return KickAssemblerTypes.DIRECTIVE; }
+    ".struct"        { return KickAssemblerTypes.DIRECTIVE; }
+    ".te"            { return KickAssemblerTypes.DIRECTIVE; }
+    ".text"          { return KickAssemblerTypes.DIRECTIVE; }
+    ".var"           { return KickAssemblerTypes.DIRECTIVE; }
+    ".while"         { return KickAssemblerTypes.DIRECTIVE; }
+    ".wo"            { return KickAssemblerTypes.DIRECTIVE; }
+    ".word"          { return KickAssemblerTypes.DIRECTIVE; }
+    ".zp"            { return KickAssemblerTypes.DIRECTIVE; }
 
     {LABEL}\:     { return KickAssemblerTypes.LABEL; }
     {LOCAL_LABEL} { return KickAssemblerTypes.LOCAL_LABEL; }

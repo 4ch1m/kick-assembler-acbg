@@ -16,6 +16,7 @@ import java.util.Map;
 import static com.intellij.openapi.editor.DefaultLanguageHighlighterColors.BLOCK_COMMENT;
 import static com.intellij.openapi.editor.DefaultLanguageHighlighterColors.BRACES;
 import static com.intellij.openapi.editor.DefaultLanguageHighlighterColors.BRACKETS;
+import static com.intellij.openapi.editor.DefaultLanguageHighlighterColors.DOC_COMMENT_TAG_VALUE;
 import static com.intellij.openapi.editor.DefaultLanguageHighlighterColors.INSTANCE_FIELD;
 import static com.intellij.openapi.editor.DefaultLanguageHighlighterColors.INSTANCE_METHOD;
 import static com.intellij.openapi.editor.DefaultLanguageHighlighterColors.KEYWORD;
@@ -41,6 +42,7 @@ public class KickAssemblerSyntaxHighlighter extends SyntaxHighlighterBase {
     public static final TextAttributesKey KICK_ASSEMBLER_BRACES = createTextAttributesKey(EXTERNAL_NAME_PREFIX + "BRACES", BRACES);
     public static final TextAttributesKey KICK_ASSEMBLER_BRACKETS = createTextAttributesKey(EXTERNAL_NAME_PREFIX + "BRACKETS", BRACKETS);
     public static final TextAttributesKey KICK_ASSEMBLER_OPERATION_SIGN = createTextAttributesKey(EXTERNAL_NAME_PREFIX + "OPERATION_SIGN", /* OPERATION_SIGN */ INSTANCE_FIELD);
+    public static final TextAttributesKey KICK_ASSEMBLER_DIRECTIVE = createTextAttributesKey(EXTERNAL_NAME_PREFIX + "DIRECTIVE", DOC_COMMENT_TAG_VALUE);
     public static final TextAttributesKey KICK_ASSEMBLER_DUMMY = createTextAttributesKey(EXTERNAL_NAME_PREFIX + "DUMMY", NO_HIGHLIGHTING);
 
     private static final TokenSet OPERATOR_TOKENS = TokenSet.create(
@@ -131,6 +133,7 @@ public class KickAssemblerSyntaxHighlighter extends SyntaxHighlighterBase {
         typeKeyMap.put(KickAssemblerTypes.COMMENT_BLOCK, KICK_ASSEMBLER_BLOCK_COMMENT);
         typeKeyMap.put(KickAssemblerTypes.NUMBER, KICK_ASSEMBLER_NUMBER);
         typeKeyMap.put(KickAssemblerTypes.MNEMONIC, KICK_ASSEMBLER_MNEMONIC);
+        typeKeyMap.put(KickAssemblerTypes.DIRECTIVE, KICK_ASSEMBLER_DIRECTIVE);
         typeKeyMap.put(KickAssemblerTypes.STRING, KICK_ASSEMBLER_STRING);
         typeKeyMap.put(KickAssemblerTypes.DUMMY, KICK_ASSEMBLER_DUMMY);
 

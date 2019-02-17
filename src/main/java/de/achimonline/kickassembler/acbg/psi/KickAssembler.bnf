@@ -60,6 +60,7 @@ root ::= ( STRING |
 
            BASIC_UPSTART |
            PREPROCESSOR |
+           DIRECTIVE |
            LABEL |
            LOCAL_LABEL |
            MNEMONIC |

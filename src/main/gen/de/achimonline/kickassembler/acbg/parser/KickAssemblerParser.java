@@ -91,6 +91,7 @@ public class KickAssemblerParser implements PsiParser, LightPsiParser {
   //            QUESTION_MARK |
   //            BASIC_UPSTART |
   //            PREPROCESSOR |
+  //            DIRECTIVE |
   //            LABEL |
   //            LOCAL_LABEL |
   //            MNEMONIC |
@@ -143,6 +144,7 @@ public class KickAssemblerParser implements PsiParser, LightPsiParser {
     if (!r) r = consumeToken(b, QUESTION_MARK);
     if (!r) r = consumeToken(b, BASIC_UPSTART);
     if (!r) r = consumeToken(b, PREPROCESSOR);
+    if (!r) r = consumeToken(b, DIRECTIVE);
     if (!r) r = consumeToken(b, LABEL);
     if (!r) r = consumeToken(b, LOCAL_LABEL);
     if (!r) r = consumeToken(b, MNEMONIC);

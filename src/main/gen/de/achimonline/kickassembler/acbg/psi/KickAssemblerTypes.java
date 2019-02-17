@@ -21,6 +21,7 @@ public interface KickAssemblerTypes {
   IElementType COMMA = new KickAssemblerTokenType("COMMA");
   IElementType COMMENT_BLOCK = new KickAssemblerTokenType("COMMENT_BLOCK");
   IElementType COMMENT_LINE = new KickAssemblerTokenType("COMMENT_LINE");
+  IElementType DIRECTIVE = new KickAssemblerTokenType("DIRECTIVE");
   IElementType DIVIDE = new KickAssemblerTokenType("DIVIDE");
   IElementType DIVIDE_EQUAL = new KickAssemblerTokenType("DIVIDE_EQUAL");
   IElementType DOT = new KickAssemblerTokenType("DOT");
