@@ -6,10 +6,9 @@
     <vendor email="intellij@achimonline.de" url="https://plugins.jetbrains.com/space/index?pr=idea&amp;lg=4ch1m">Achim Seufert</vendor>
 
     <description><![CDATA[
-    Language support for <a href="http://theweb.dk/KickAssembler/" target="_blank">Kick Assembler<a>.
-
+    Language support for <a href="http://theweb.dk/KickAssembler/" target="_blank">Kick Assembler<a>.<br>
+    <br>
     Main features:
-
     <ul>
         <li>SDK Management</li>
         <li>Project Generation</li>
