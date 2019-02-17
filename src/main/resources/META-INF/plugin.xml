@@ -1,16 +1,26 @@
 <idea-plugin>
 
     <id>de.achimonline.kickassembler-acbg</id>
-    <name>Kick Assembler (... and chew bubble gum)</name>
+    <name>Kick Assembler (... and chew bubble gum) [BETA]</name>
 
     <vendor email="intellij@achimonline.de" url="https://plugins.jetbrains.com/space/index?pr=idea&amp;lg=4ch1m">Achim Seufert</vendor>
 
     <description><![CDATA[
     Language support for <a href="http://theweb.dk/KickAssembler/" target="_blank">Kick Assembler<a>.
+
+    Main features:
+
+    <ul>
+        <li>SDK Management</li>
+        <li>Project Generation</li>
+        <li>Syntax Highlighting</li>
+        <li>Run Configurations</li>
+        <li>"New File" Template</li>
+    </ul>
     ]]></description>
 
     <change-notes><![CDATA[
-      <b>0.1</b>
+      <b>1.0</b>
       <ul>
         <li>initial release</li>
       </ul>

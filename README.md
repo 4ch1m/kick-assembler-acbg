@@ -11,8 +11,8 @@
 ## Disclaimer
 
 This plugin is still at an early stage of development.
-Not all of the planned features are implemented or work as expected at this point.
-Any help or contributions (bug reports, pull requests, etc.) are much appreciated. 
+Not all features are fully implemented or work as expected at this point.
+Feedback, help or any other contributions are very welcome. 
 
 ## Features
 
@@ -73,18 +73,18 @@ IntelliJ's built-in [macros](https://github.com/JetBrains/intellij-community/tre
 
 e.g.
 
-* $ProjectName$
-* $Projectpath$
-* $ProjectFileDir$
-* $FileDir$
-* $FileDirName$
-* $FileDirPathFromParent$
-* $FileExt$
-* $FileName$
-* $FileNameWithoutAllExtensions$
-* $FileNameWithoutExtension$
-* $FileParentDir$
-* $FilePath$
+* `$ProjectName$`
+* `$Projectpath$`
+* `$ProjectFileDir$`
+* `$FileDir$`
+* `$FileDirName$`
+* `$FileDirPathFromParent$`
+* `$FileExt$`
+* `$FileName$`
+* `$FileNameWithoutAllExtensions$`
+* `$FileNameWithoutExtension$`
+* `$FileParentDir$`
+* `$FilePath$`
 * etc.
 
 <strong>NOTE:</strong> It is also possible to automatically create and run a Run Configuration by right-clicking on a `*.asm`-file.
