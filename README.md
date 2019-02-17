@@ -35,7 +35,7 @@ Use the IDE's built-in plugin system:
 
 <kbd>Preferences</kbd> &rarr; <kbd>Plugins</kbd> &rarr; <kbd>Browse repositories...</kbd> &rarr; <kbd>Search for "Kick Assembler"</kbd> &rarr; <kbd>Install Plugin</kbd>
 
-Or go to the [plugin page](https://plugins.jetbrains.com/plugin/___?pr=idea) on the [JetBrains](https://www.jetbrains.com)-website, download the archive-file and install manually.
+Or go to the [plugin page](https://plugins.jetbrains.com/plugin/11988-kick-assembler---and-chew-bubble-gum--beta-) on the [JetBrains](https://www.jetbrains.com)-website, download the archive-file and install manually.
 
 ## Setup
 
