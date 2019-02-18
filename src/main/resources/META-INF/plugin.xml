@@ -6,9 +6,12 @@
     <vendor email="intellij@achimonline.de" url="https://plugins.jetbrains.com/space/index?pr=idea&amp;lg=4ch1m">Achim Seufert</vendor>
 
     <description><![CDATA[
-    Language support for <a href="http://theweb.dk/KickAssembler/" target="_blank">Kick Assembler<a>.<br>
-    <br>
-    Main features:
+    <p>
+        Language support for <a href="http://theweb.dk/KickAssembler/">Kick Assembler<a>.
+    </p>
+    <p>
+        Main features:
+    </p>
     <ul>
         <li>SDK Management</li>
         <li>Project Generation</li>
@@ -16,9 +19,16 @@
         <li>Run Configurations</li>
         <li>"New File" Template</li>
     </ul>
+    <p>
+        Visit the <a href="https://github.com/4ch1m/kick-assembler-acbg">GitHub</a>-page for more information.
+    </p>
     ]]></description>
 
     <change-notes><![CDATA[
+      <b>1.0.2</b>
+      <ul>
+        <li>minimum and maximum "IDEA compatibility version" now being set via Gradle-plugin</li>
+      </ul>
       <b>1.0.1</b>
       <ul>
         <li>updated plugin description</li>
