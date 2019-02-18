@@ -25,6 +25,10 @@
     ]]></description>
 
     <change-notes><![CDATA[
+      <b>1.0.3</b>
+      <ul>
+        <li>updated/fixed description</li>
+      </ul>
       <b>1.0.2</b>
       <ul>
         <li>minimum and maximum "IDEA compatibility version" now being set via Gradle-plugin</li>
