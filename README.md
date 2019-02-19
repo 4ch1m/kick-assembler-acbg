@@ -33,9 +33,11 @@ In addition to the IntelliJ's wide range of built-in functionality (like version
 ## Installation
 Use the IDE's built-in plugin system:
 
-<kbd>Preferences</kbd> &rarr; <kbd>Plugins</kbd> &rarr; <kbd>Browse repositories...</kbd> &rarr; <kbd>Search for "Kick Assembler"</kbd> &rarr; <kbd>Install Plugin</kbd>
+* <kbd>File</kbd> &rarr; <kbd>Settings</kbd> &rarr; <kbd>Plugins</kbd> &rarr; <kbd>Marketplace</kbd>
+* search for "Kick Assembler"
+* click the <kbd>Install</kbd>-button
 
-Or go to the [plugin page](https://plugins.jetbrains.com/plugin/11988-kick-assembler---and-chew-bubble-gum--beta-) on the [JetBrains](https://www.jetbrains.com)-website, download the archive-file and install manually.
+Or go to the [plugin page](https://plugins.jetbrains.com/plugin/11988) on the [JetBrains](https://www.jetbrains.com)-website, download the archive-file and install manually.
 
 ## Setup
 
@@ -129,3 +131,5 @@ Just go to <kbd>File</kbd> &rarr; <kbd>Settings&hellip;</kbd> &rarr; <kbd>Keymap
 ## License
 
 Please read the [license](license) file.
+
+![Code 6502](/src/main/resources/code_6502_587x60.png?raw=true)
