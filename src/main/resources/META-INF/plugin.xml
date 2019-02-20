@@ -25,6 +25,10 @@
     ]]></description>
 
     <change-notes><![CDATA[
+      <b>1.0.5</b>
+      <ul>
+        <li>fixed since-build number</li>
+      </ul>
       <b>1.0.4</b>
       <ul>
         <li>adjusted "IDEA compatibility version"... again ;-)</li>
@@ -48,7 +52,7 @@
     ]]>
     </change-notes>
 
-    <idea-version since-build="182.0"/>
+    <idea-version since-build="182"/>
 
     <depends>com.intellij.modules.java</depends>
 
