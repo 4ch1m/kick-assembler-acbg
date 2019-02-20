@@ -1,7 +1,7 @@
 <idea-plugin>
 
     <id>de.achimonline.kickassembler-acbg</id>
-    <name>Kick Assembler (... and chew bubble gum) [BETA]</name>
+    <name>Kick Assembler (... and chew bubble gum) [beta]</name>
 
     <vendor email="intellij@achimonline.de" url="https://plugins.jetbrains.com/space/index?pr=idea&amp;lg=4ch1m">Achim Seufert</vendor>
 
@@ -25,6 +25,10 @@
     ]]></description>
 
     <change-notes><![CDATA[
+      <b>1.0.4</b>
+      <ul>
+        <li>adjusted "IDEA compatibility version"... again ;-)</li>
+      </ul>
       <b>1.0.3</b>
       <ul>
         <li>updated/fixed description</li>
@@ -44,7 +48,7 @@
     ]]>
     </change-notes>
 
-    <idea-version since-build="162.0"/>
+    <idea-version since-build="182.0"/>
 
     <depends>com.intellij.modules.java</depends>
 
