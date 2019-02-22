@@ -25,6 +25,10 @@
     ]]></description>
 
     <change-notes><![CDATA[
+      <b>1.1</b>
+      <ul>
+        <li>fixed sdk-/jre-handling for run-configurations</li>
+      </ul>
       <b>1.0.5</b>
       <ul>
         <li>fixed since-build number</li>

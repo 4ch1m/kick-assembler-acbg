@@ -72,7 +72,8 @@ public class KickAssemblerCommandLine {
         if (StringUtils.isNotEmpty(jreNameOrPath)) {
             for (Sdk jdk : PROJECT_JDK_TABLE.getAllJdks()) {
                 if (jdk.getSdkType() instanceof JavaSdk) {
-                    File javaExecutable = new File(jdk.getSdkType().getName().equals(jreNameOrPath) ? jdk.getHomePath() : jreNameOrPath + File.separator + "bin" + File.separator + "java");
+                    String homePath = jdk.getName().equals(jreNameOrPath) ? jdk.getHomePath() : jreNameOrPath;
+                    File javaExecutable = new File(homePath + File.separator + "bin" + File.separator + "java");
 
                     if (javaExecutable.exists() && javaExecutable.isFile() && javaExecutable.canExecute()) {
                         return javaExecutable.getPath();
@@ -98,7 +99,19 @@ public class KickAssemblerCommandLine {
                 }
             }
         } else {
-            return PROJECT_JDK_TABLE.findMostRecentSdkOfType(SdkType.findInstance(KickAssemblerSdk.class)).getHomePath();
+            Sdk mostRecentSdk = PROJECT_JDK_TABLE.findMostRecentSdkOfType(SdkType.findInstance(KickAssemblerSdk.class));
+
+            if (mostRecentSdk != null) {
+                return mostRecentSdk.getHomePath();
+            }
+
+            for (Sdk sdk : PROJECT_JDK_TABLE.getAllJdks()) {
+                if (sdk.getSdkType() instanceof KickAssemblerSdk) {
+                    return sdk.getHomePath();
+                }
+            }
+
+            throw new RuntimeException(message("project.exception.sdk.not.set"));
         }
 
         throw new RuntimeException(message("runconfiguration.exception.invalid.sdk"));
