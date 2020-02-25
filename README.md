@@ -117,6 +117,46 @@ Just go to <kbd>File</kbd> &rarr; <kbd>Settings&hellip;</kbd> &rarr; <kbd>Keymap
 
 ![keymap_vice](/screenshots/keymap_vice.png?raw=true)
 
+> Is it possible to compile/build the prg-file and run VICE with just one click?
+
+The short answer: Yes.
+
+Here's the detailed guide (for *nix-like systems at least :wink:) ...
+
+To achieve this we need **two** Run Configurations.
+
+* the Kick Assembler Run Configuration (that compiles the code and generates the prg-file)
+* a separate Run Configuration which invokes the emulator (VICE)
+
+You can chain multiple Run Configurations together and have them executed in sequence.
+
+However, IntelliJ only lets you choose other configs to be run **before** launch (not after) the actual Run Configuration.
+So the second Run Configuration will have to be the main config we're working with.
+
+Step-by-step example:
+
+1. Create your Kick Assembler Run Configuration as desired.
+2. Then create a tiny helper shell-script which will ...
+    * find and kill any currently running x64-emulator instances
+    * determine the latest prg-file in your working directory
+    * and run it with x64.
+    
+    e.g.
+    ```
+    #!/bin/bash
+    killall x64 &> /dev/null; x64 +confirmonexit $(ls -1t *.prg | head -n1)
+    ```
+   (You can save this script wherever you like; for reuse in other projects.)
+3. Now create another Run Configuration. This time a [Shell Script Run Configuration](https://www.jetbrains.com/help/idea/run-debug-configuration-shell-script.html).
+
+    Here you'll run the above script and add the Kick Assembler Run Configuration to the "before launch"-section.
+    
+    ![shell_script_run_config](/screenshots/shell_script_run_config.png?raw=true)
+    
+    (Make sure your working-directory is identical to to prg-file's location!)
+
+That's about it; a one-click "build n' run".   
+
 ---
 
 ## Credits
