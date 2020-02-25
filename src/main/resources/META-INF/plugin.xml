@@ -56,9 +56,9 @@
     ]]>
     </change-notes>
 
-    <idea-version since-build="182"/>
+    <idea-version since-build="192"/>
 
-    <depends>com.intellij.modules.java</depends>
+    <depends>com.intellij.java</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <lang.parserDefinition

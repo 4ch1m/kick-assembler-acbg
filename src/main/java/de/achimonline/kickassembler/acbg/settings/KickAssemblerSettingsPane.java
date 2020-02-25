@@ -26,7 +26,7 @@ public class KickAssemblerSettingsPane implements Disposable {
 
     public void setData(KickAssemblerSettings kickAssemblerSettings) {
         jrePathEditor.setPathOrName(kickAssemblerSettings.getJrePathOrName(), true);
-        jrePathEditor.getComponent().getComboBox().addActionListener(e -> modified = true);
+        jrePathEditor.getComponent().addActionListener(e -> modified = true);
     }
 
     public void storeSettings(KickAssemblerSettings kickAssemblerSettings) {
