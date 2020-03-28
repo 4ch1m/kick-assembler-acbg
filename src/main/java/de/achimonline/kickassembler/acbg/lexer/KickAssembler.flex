@@ -56,6 +56,7 @@ BLOCK_COMMENT = "/*"([^"*"]|("*"+[^"*""/"]))*("*"+"/")?
     ".by"            { return KickAssemblerTypes.DIRECTIVE; }
     ".byte"          { return KickAssemblerTypes.DIRECTIVE; }
     ".const"         { return KickAssemblerTypes.DIRECTIVE; }
+    ".cpu"           { return KickAssemblerTypes.DIRECTIVE; }
     ".define"        { return KickAssemblerTypes.DIRECTIVE; }
     ".disk"          { return KickAssemblerTypes.DIRECTIVE; }
     ".dw"            { return KickAssemblerTypes.DIRECTIVE; }
@@ -69,12 +70,14 @@ BLOCK_COMMENT = "/*"([^"*"]|("*"+[^"*""/"]))*("*"+"/")?
     ".filemodify"    { return KickAssemblerTypes.DIRECTIVE; }
     ".filenamespace" { return KickAssemblerTypes.DIRECTIVE; }
     ".fill"          { return KickAssemblerTypes.DIRECTIVE; }
+    ".fillword"      { return KickAssemblerTypes.DIRECTIVE; }
     ".for"           { return KickAssemblerTypes.DIRECTIVE; }
     ".function"      { return KickAssemblerTypes.DIRECTIVE; }
     ".if"            { return KickAssemblerTypes.DIRECTIVE; }
     ".import"        { return KickAssemblerTypes.DIRECTIVE; }
     ".importonce"    { return KickAssemblerTypes.DIRECTIVE; }
     ".label"         { return KickAssemblerTypes.DIRECTIVE; }
+    ".lohifill"      { return KickAssemblerTypes.DIRECTIVE; }
     ".macro"         { return KickAssemblerTypes.DIRECTIVE; }
     ".memblock"      { return KickAssemblerTypes.DIRECTIVE; }
     ".modify"        { return KickAssemblerTypes.DIRECTIVE; }
