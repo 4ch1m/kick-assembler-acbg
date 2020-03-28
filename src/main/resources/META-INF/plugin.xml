@@ -28,6 +28,8 @@
       <b>1.1</b>
       <ul>
         <li>fixed sdk-/jre-handling for run-configurations</li>
+        <li>syntax highlighting: missing assembler-directives added ('.cpu', '.fillword', '.lohifill')</li>
+        <li>updated plugin dependencies</li>
       </ul>
       <b>1.0.5</b>
       <ul>
