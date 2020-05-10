@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id 'org.jetbrains.intellij' version '0.4.16'
+    id 'org.jetbrains.intellij' version '0.4.20'
 }
 
 sourceCompatibility = 1.8
@@ -15,8 +15,8 @@ dependencies {
 
     testCompile 'junit:junit:4.13'
     testCompile 'org.mockito:mockito-core:2.28.2'
-    testCompile 'org.powermock:powermock-api-mockito2:2.0.5'
-    testCompile 'org.powermock:powermock-module-junit4:2.0.5'
+    testCompile 'org.powermock:powermock-api-mockito2:2.0.7'
+    testCompile 'org.powermock:powermock-module-junit4:2.0.7'
 }
 
 sourceSets {
@@ -29,7 +29,7 @@ sourceSets {
 }    
     
 intellij {
-    version '2019.3.3'
+    version '2020.1.1'
     pluginName 'kick-assembler-acbg'
     updateSinceUntilBuild false
 }
@@ -39,6 +39,6 @@ publishPlugin {
 }
 
 group 'de.achimonline'
-version 1.1
+version 1.2
 
 intellij.plugins 'java'

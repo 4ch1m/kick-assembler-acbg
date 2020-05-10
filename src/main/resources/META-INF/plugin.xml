@@ -1,7 +1,7 @@
 <idea-plugin>
 
     <id>de.achimonline.kickassembler-acbg</id>
-    <name>Kick Assembler (... and chew bubble gum) [beta]</name>
+    <name>Kick Assembler (... and chew bubble gum)</name>
 
     <vendor email="intellij@achimonline.de" url="https://plugins.jetbrains.com/space/index?pr=idea&amp;lg=4ch1m">Achim Seufert</vendor>
 
@@ -25,6 +25,13 @@
     ]]></description>
 
     <change-notes><![CDATA[
+      <b>1.2</b>
+      <ul>
+        <li>updated plugin name ("[beta]" removed)</li>
+        <li>updated plugin dependencies</li>
+        <li>gradle-wrapper update</li>
+        <li>other minor configuration updates</li>
+      </ul>
       <b>1.1</b>
       <ul>
         <li>fixed sdk-/jre-handling for run-configurations</li>
@@ -60,7 +67,9 @@
 
     <idea-version since-build="192"/>
 
-    <depends>com.intellij.java</depends>
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.java</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <lang.parserDefinition
