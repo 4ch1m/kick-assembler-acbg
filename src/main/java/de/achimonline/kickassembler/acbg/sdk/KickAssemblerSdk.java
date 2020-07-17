@@ -1,5 +1,6 @@
 package de.achimonline.kickassembler.acbg.sdk;
 
+import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.projectRoots.AdditionalDataConfigurable;
 import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.projectRoots.SdkAdditionalData;
@@ -8,6 +9,7 @@ import com.intellij.openapi.projectRoots.SdkModificator;
 import com.intellij.openapi.projectRoots.impl.JavaAwareProjectJdkTableImpl;
 import com.intellij.openapi.util.IconLoader;
 import de.achimonline.kickassembler.acbg.properties.KickAssemblerProperties;
+import de.achimonline.kickassembler.acbg.runconfiguration.KickAssemblerCommandLine;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
 import org.jdom.Element;
@@ -24,6 +26,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class KickAssemblerSdk extends KickAssemblerSdkType {
+
+    private static final Logger log = Logger.getInstance(KickAssemblerSdk.class);
+
     public static final String NAME = "Kick Assembler SDK";
 
     private static final Pattern SDK_VERSION_PATTERN = Pattern.compile("(?<=Assembler\\s).*(?=\\sby)");
@@ -128,16 +133,16 @@ public class KickAssemblerSdk extends KickAssemblerSdkType {
         try {
             String sdkJarPath = getJarPath(sdkHome);
 
-            String commandLine = new StringBuilder()
+            String javaCommand = new StringBuilder()
                     .append(internalJdk.getHomePath())
                     .append(File.separator)
                     .append("bin")
                     .append(File.separator)
                     .append("java")
-                    .append(" -jar ")
-                    .append(sdkJarPath)
                     .toString();
-
+            String[] commandLine = new String[] {
+                javaCommand, "-jar", sdkJarPath
+            };
             Process process = Runtime.getRuntime().exec(commandLine);
             process.waitFor();
 
@@ -148,7 +153,9 @@ public class KickAssemblerSdk extends KickAssemblerSdkType {
             if (matcher.find()) {
                 return matcher.group(0).trim();
             }
-        } catch (Exception e) {}
+        } catch (Exception e) {
+            log.warn("got exception determining sdk version from jar", e);
+        }
 
         return null;
     }
