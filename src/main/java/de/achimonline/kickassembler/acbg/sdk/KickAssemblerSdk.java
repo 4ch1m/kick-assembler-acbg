@@ -130,20 +130,21 @@ public class KickAssemblerSdk extends KickAssemblerSdkType {
 
     private String determineSdkVersionFromJar(String sdkHome) {
         Sdk internalJdk = JavaAwareProjectJdkTableImpl.getInstanceEx().getInternalJdk();
-        try {
-            String sdkJarPath = getJarPath(sdkHome);
 
-            String javaCommand = new StringBuilder()
-                    .append(internalJdk.getHomePath())
-                    .append(File.separator)
-                    .append("bin")
-                    .append(File.separator)
-                    .append("java")
-                    .toString();
-            String[] commandLine = new String[] {
-                javaCommand, "-jar", sdkJarPath
+        String internalJavaBinaryPath = new StringBuilder()
+                .append(internalJdk.getHomePath())
+                .append(File.separator)
+                .append("bin")
+                .append(File.separator)
+                .append("java")
+                .toString();
+
+        try {
+            String[] cmdArray = new String[] {
+                internalJavaBinaryPath, "-jar", getJarPath(sdkHome)
             };
-            Process process = Runtime.getRuntime().exec(commandLine);
+
+            Process process = Runtime.getRuntime().exec(cmdArray);
             process.waitFor();
 
             String output = IOUtils.toString(process.getInputStream(), StandardCharsets.UTF_8);
