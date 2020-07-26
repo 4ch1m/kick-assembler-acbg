@@ -124,11 +124,9 @@
         <applicationService serviceImplementation="de.achimonline.kickassembler.acbg.settings.KickAssemblerSettingsService"/>
     </extensions>
 
-    <project-components>
-        <component>
-            <implementation-class>de.achimonline.kickassembler.acbg.project.KickAssemblerProjectListener</implementation-class>
-        </component>
-    </project-components>
+    <projectListeners>
+        <listener class="de.achimonline.kickassembler.acbg.project.KickAssemblerProjectListener" topic="com.intellij.openapi.wm.ex.ToolWindowManagerListener" />
+    </projectListeners>
 
     <actions>
         <action
