@@ -70,7 +70,7 @@
     ]]>
     </change-notes>
 
-    <idea-version since-build="192"/>
+    <idea-version since-build="201"/>
 
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.lang</depends>
@@ -121,13 +121,8 @@
         <internalFileTemplate
                 name="Kick Assembler file"/>
 
+        <applicationService serviceImplementation="de.achimonline.kickassembler.acbg.settings.KickAssemblerSettingsService"/>
     </extensions>
-
-    <application-components>
-        <component>
-            <implementation-class>de.achimonline.kickassembler.acbg.settings.KickAssemblerSettingsComponent</implementation-class>
-        </component>
-    </application-components>
 
     <project-components>
         <component>

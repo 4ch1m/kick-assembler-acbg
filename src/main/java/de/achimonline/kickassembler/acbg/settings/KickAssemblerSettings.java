@@ -10,12 +10,12 @@ public class KickAssemblerSettings implements Serializable {
     private String jrePathOrName;
 
     public static KickAssemblerSettings storedSettings(Application application) {
-        KickAssemblerSettingsComponent kickAssemblerSettingsComponent = application.getComponent(KickAssemblerSettingsComponent.class);
+        KickAssemblerSettingsService kickAssemblerSettingsService = application.getService(KickAssemblerSettingsService.class);
 
-        if (kickAssemblerSettingsComponent == null) {
+        if (kickAssemblerSettingsService == null) {
             return new KickAssemblerSettings();
         }
 
-        return kickAssemblerSettingsComponent.getState();
+        return kickAssemblerSettingsService.getState();
     }
 }
