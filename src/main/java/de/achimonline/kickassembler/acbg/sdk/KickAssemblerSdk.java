@@ -9,7 +9,6 @@ import com.intellij.openapi.projectRoots.SdkModificator;
 import com.intellij.openapi.projectRoots.impl.JavaAwareProjectJdkTableImpl;
 import com.intellij.openapi.util.IconLoader;
 import de.achimonline.kickassembler.acbg.properties.KickAssemblerProperties;
-import de.achimonline.kickassembler.acbg.runconfiguration.KickAssemblerCommandLine;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
 import org.jdom.Element;
@@ -67,6 +66,7 @@ public class KickAssemblerSdk extends KickAssemblerSdkType {
         try {
             jarFileExists = StringUtils.isNotEmpty(getJarPath(path));
         } catch (Exception e) {
+            log.warn(e);
         }
 
         return jarFileExists;
