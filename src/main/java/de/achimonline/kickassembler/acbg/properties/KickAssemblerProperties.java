@@ -1,6 +1,6 @@
 package de.achimonline.kickassembler.acbg.properties;
 
-import com.intellij.CommonBundle;
+import com.intellij.AbstractBundle;
 import org.jetbrains.annotations.PropertyKey;
 
 import java.lang.ref.Reference;
@@ -13,7 +13,7 @@ public class KickAssemblerProperties {
     private static Reference<ResourceBundle> resourceBundle;
 
     public static String message(@PropertyKey(resourceBundle = BUNDLE) String key, Object... params) {
-        return CommonBundle.message(getBundle(), key, params);
+        return AbstractBundle.message(getBundle(), key, params);
     }
 
     private static ResourceBundle getBundle() {
