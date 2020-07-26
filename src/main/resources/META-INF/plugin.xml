@@ -89,8 +89,11 @@
                 language="Kick Assembler"
                 implementationClass="de.achimonline.kickassembler.acbg.commenter.KickAssemblerCommenter"/>
 
-        <fileTypeFactory
-                implementation="de.achimonline.kickassembler.acbg.filetype.KickAssemblerFileTypeFactory"/>
+        <fileType language="Kick Assembler"
+                  name="Kick Assember File"
+                  implementationClass="de.achimonline.kickassembler.acbg.filetype.KickAssemblerFileType"
+                  fieldName="INSTANCE"
+                  extensions="asm"/>
 
         <sdkType
                 implementation="de.achimonline.kickassembler.acbg.sdk.KickAssemblerSdk"/>
