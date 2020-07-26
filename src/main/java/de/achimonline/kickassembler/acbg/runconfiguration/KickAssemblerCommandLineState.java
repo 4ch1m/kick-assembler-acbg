@@ -32,7 +32,7 @@ public class KickAssemblerCommandLineState extends CommandLineState {
     @NotNull
     @Override
     protected ProcessHandler startProcess() throws ExecutionException {
-        return null;
+        return null; // TODO
     }
 
     @NotNull
