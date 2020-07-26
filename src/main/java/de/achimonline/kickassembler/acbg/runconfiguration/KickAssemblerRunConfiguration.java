@@ -82,7 +82,7 @@ public class KickAssemblerRunConfiguration extends ModuleBasedConfiguration {
     @Override
     public Collection<Module> getValidModules() {
         return Arrays.stream(ModuleManager.getInstance(getProject()).getModules())
-                .filter(module -> module != null && !module.isDisposed())
+                .filter(module -> !module.isDisposed())
                 .collect(Collectors.toList());
     }
 
