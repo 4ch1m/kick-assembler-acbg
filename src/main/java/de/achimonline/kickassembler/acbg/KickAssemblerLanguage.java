@@ -7,6 +7,6 @@ public class KickAssemblerLanguage extends Language {
     public static final KickAssemblerLanguage INSTANCE = new KickAssemblerLanguage();
 
     private KickAssemblerLanguage() {
-        super(KickAssemblerProperties.message("language"));
+        super("Kick Assembler");
     }
 }
