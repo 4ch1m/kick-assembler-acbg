@@ -10,7 +10,6 @@ import com.intellij.openapi.projectRoots.JavaSdk;
 import com.intellij.openapi.projectRoots.ProjectJdkTable;
 import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.projectRoots.SdkType;
-import com.intellij.openapi.projectRoots.impl.JavaAwareProjectJdkTableImpl;
 import de.achimonline.kickassembler.acbg.sdk.KickAssemblerSdk;
 import de.achimonline.kickassembler.acbg.sdk.KickAssemblerSdkType;
 import de.achimonline.kickassembler.acbg.settings.KickAssemblerSettings;
@@ -21,6 +20,7 @@ import org.apache.commons.lang.StringUtils;
 import java.io.File;
 import java.util.List;
 
+import static de.achimonline.kickassembler.acbg.notifications.KickAssemblerNotifications.notifyError;
 import static de.achimonline.kickassembler.acbg.properties.KickAssemblerProperties.message;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
@@ -61,7 +61,9 @@ public class KickAssemblerCommandLine {
             try {
                 workingDirectory = MACRO_MANAGER.expandMacrosInString(workingDirectory, true, dataContext);
             } catch (Macro.ExecutionCancelledException e) {
-                throw new RuntimeException(message("runconfiguration.exception.working.directory", workingDirectory));
+                String msg = message("runconfiguration.exception.working.directory", workingDirectory);
+                notifyError(msg);
+                throw new RuntimeException(msg);
             }
         }
 
@@ -80,11 +82,11 @@ public class KickAssemblerCommandLine {
                     }
                 }
             }
-        } else {
-            return JavaAwareProjectJdkTableImpl.getInstanceEx().getInternalJdk().getHomePath() + File.separator + "bin" + File.separator + "java";
         }
 
-        throw new RuntimeException(message("runconfiguration.exception.invalid.jre", jreNameOrPath));
+        String msg = message("runconfiguration.exception.missing.or.invalid.jre", jreNameOrPath);
+        notifyError(msg);
+        throw new RuntimeException(msg);
     }
 
     protected static String determineKickAssemblerHomePath(String sdkNameOrPath) {
@@ -111,7 +113,9 @@ public class KickAssemblerCommandLine {
                 }
             }
 
-            throw new RuntimeException(message("project.exception.sdk.not.set"));
+            String msg = message("project.exception.sdk.not.set");
+            notifyError(msg);
+            throw new RuntimeException(message(msg));
         }
 
         throw new RuntimeException(message("runconfiguration.exception.invalid.sdk"));
@@ -121,7 +125,9 @@ public class KickAssemblerCommandLine {
         try {
             return KickAssemblerSdkType.getInstance().getJarPath(kickAssemblerHomePath);
         } catch (Exception e) {
-            throw new RuntimeException(message("runconfiguration.exception.kickass.jar", kickAssemblerHomePath));
+            String msg = message("runconfiguration.exception.kickass.jar", kickAssemblerHomePath);
+            notifyError(message(msg));
+            throw new RuntimeException(msg);
         }
     }
 
@@ -134,7 +140,9 @@ public class KickAssemblerCommandLine {
 
             return parametersList.getParameters();
         } catch (Macro.ExecutionCancelledException e) {
-            throw new RuntimeException(message("runconfiguration.exception.program.parameters", programParameters));
+            String msg = message("runconfiguration.exception.program.parameters", programParameters);
+            notifyError(msg);
+            throw new RuntimeException(msg);
         }
     }
 }
