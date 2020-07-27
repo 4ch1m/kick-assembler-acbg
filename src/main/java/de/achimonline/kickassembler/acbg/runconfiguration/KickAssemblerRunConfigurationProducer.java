@@ -2,18 +2,16 @@ package de.achimonline.kickassembler.acbg.runconfiguration;
 
 import com.intellij.execution.Location;
 import com.intellij.execution.actions.ConfigurationContext;
-import com.intellij.execution.actions.RunConfigurationProducer;
+import com.intellij.execution.actions.LazyRunConfigurationProducer;
+import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.util.Ref;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import de.achimonline.kickassembler.acbg.KickAssemblerLanguage;
+import org.jetbrains.annotations.NotNull;
 
-public class KickAssemblerRunConfigurationProducer extends RunConfigurationProducer<KickAssemblerRunConfiguration> {
-    public KickAssemblerRunConfigurationProducer() {
-        super(KickAssemblerRunConfigurationType.getInstance());
-    }
-
+public class KickAssemblerRunConfigurationProducer extends LazyRunConfigurationProducer<KickAssemblerRunConfiguration> {
     @Override
     protected boolean setupConfigurationFromContext(KickAssemblerRunConfiguration configuration, ConfigurationContext context, Ref<PsiElement> sourceElement) {
         Location location = context.getLocation();
@@ -49,5 +47,12 @@ public class KickAssemblerRunConfigurationProducer extends RunConfigurationProdu
     @Override
     public boolean isConfigurationFromContext(KickAssemblerRunConfiguration configuration, ConfigurationContext context) {
         return configuration.getKickAssemblerFile().equals(context.getLocation().getVirtualFile().getPath());
+    }
+
+    @NotNull
+    @Override
+    public ConfigurationFactory getConfigurationFactory() {
+        KickAssemblerRunConfigurationType kickAssemblerRunConfigurationType = new KickAssemblerRunConfigurationType();
+        return kickAssemblerRunConfigurationType.getConfigurationFactories()[0];
     }
 }
