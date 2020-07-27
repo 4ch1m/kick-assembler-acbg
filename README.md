@@ -8,14 +8,29 @@
 ##### Build Status
 [![Build Status](https://travis-ci.org/4ch1m/kick-assembler-acbg.svg?branch=master)](https://travis-ci.org/4ch1m/ChangelistOrganizer)
 
-## Disclaimer
+## Table of contents
+* [Disclaimer](#disclaimer)
+* [Features](#features)
+* [Prerequisites](#prerequisites)
+* [Installation](#installation)
+* [Setup](#setup)
+  * [Project](#project)
+  * [JRE and SDK](#jre-and-sdk)
+    * [JRE](#jre)
+    * [SDK](#sdk)
+  * [New File Template](#new-file-template)
+  * [Run Configuration](#run-configuration)
+* [FAQs](#faqs)
+* [Credits](#credits)
+* [Author](#author)
+* [License](#license)
 
+## Disclaimer
 This plugin is still at an early stage of development.
 Not all features are fully implemented or work as expected at this point.
 Feedback, help or any other contributions are very welcome. 
 
 ## Features
-
 In addition to the IntelliJ's wide range of built-in functionality (like version control, the excellent editor, etc.), this plugin provides the following Kick Assembler specific features:
 
 * Syntax Highlighting :wrench:
@@ -40,17 +55,20 @@ Use the IDE's built-in plugin system:
 Or go to the [plugin page](https://plugins.jetbrains.com/plugin/11988) on the [JetBrains](https://www.jetbrains.com)-website, download the archive-file and install manually.
 
 ## Setup
-
 Here's how to use/setup the plugin &hellip;
 
 ### Project
-
 Simply create a new `Kick Assember project` and complete all following steps to finish the project initialization.
 
 ![new_project](/screenshots/new_project.png?raw=true)
 
 ### JRE and SDK
+#### JRE
+The JRE - used to run Kick Assembler - must be configured via <kbd>File</kbd> &rarr; <kbd>Settings&hellip;</kbd> &rarr; <kbd>Languages &amp; Frameworks</kbd> &rarr; <kbd>Kick Assembler</kbd>.
 
+![setup_jre](/screenshots/setup_jre.png?raw=true)
+
+#### SDK
 In the project's setup-page create a new Kick Assembler SDK:
 
 ![setup_project_sdk](/screenshots/setup_project_sdk.png?raw=true)
@@ -58,7 +76,6 @@ In the project's setup-page create a new Kick Assembler SDK:
 (Navigate to your Kick Assembler installation directory and click <kbd>OK</kbd>.)
 
 ### New File Template
-
 New Kick Assembler files can be created via <kbd>File</kbd> &rarr; <kbd>New</kbd> &rarr; <kbd>Kick Assembler file</kbd>.
 
 ![new_file](/screenshots/new_file.png?raw=true)
@@ -66,7 +83,6 @@ New Kick Assembler files can be created via <kbd>File</kbd> &rarr; <kbd>New</kbd
 (Which provides a `BasicUpstart2` stub.)
 
 ### Run Configuration
-
 Run Configurations can be used to invoke Kick Assembler with a selected source-file:
 
 ![run_configuration](/screenshots/run_configuration.png?raw=true)
@@ -91,16 +107,7 @@ e.g.
 
 <strong>NOTE:</strong> It is also possible to automatically create and run a Run Configuration by right-clicking on a `*.asm`-file.
 
-### JRE <small><small><small>[optional]</small></small></small>
-
-The JRE - used to run Kick Assembler - can be chosen via <kbd>File</kbd> &rarr; <kbd>Settings&hellip;</kbd> &rarr; <kbd>Languages &amp; Frameworks</kbd> &rarr; <kbd>Kick Assembler</kbd>.
-
-(Otherwise IntelliJ's internal JRE will be used.)
-
-![setup_jre](/screenshots/setup_jre.png?raw=true)
-
 ## FAQs
-
 > How can I integrate [VICE](http://vice-emu.sourceforge.net/)?
 
 IntelliJ has a neat feature called  [External Tools](https://www.jetbrains.com/help/idea/settings-tools-external-tools.html). It can be used to run third-party tools on (selected) files.
@@ -157,19 +164,14 @@ Step-by-step example:
 
 That's about it; a one-click "build n' run".   
 
----
-
 ## Credits
-
 * [Kick Assembler](http://theweb.dk/KickAssembler) created by Mads Nielsen
 * _Sunglasses_ icon made by [Yannick](https://www.flaticon.com/authors/yannick) ([www.flaticon.com](www.flaticon.com)) 
 
 ## Author
-
 :email: [Achim Seufert](mailto:kickassembler-acbg@achimonline.de)
 
 ## License
-
 Please read the [license](license) file.
 
 ![Code 6502](/src/main/resources/code_6502_587x60.png?raw=true)
