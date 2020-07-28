@@ -68,6 +68,8 @@ The JRE - used to run Kick Assembler - must be configured via <kbd>File</kbd> &r
 
 ![setup_jre](/screenshots/setup_jre.png?raw=true)
 
+This step is **mandatory**, since the following SDK-setup relies on an existing/configured JRE. 
+
 #### SDK
 In the project's setup-page create a new Kick Assembler SDK:
 
