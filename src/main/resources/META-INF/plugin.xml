@@ -93,7 +93,7 @@
                 implementationClass="de.achimonline.kickassembler.acbg.commenter.KickAssemblerCommenter"/>
 
         <fileType language="Kick Assembler"
-                  name="Kick Assember file"
+                  name="Kick Assembler file"
                   implementationClass="de.achimonline.kickassembler.acbg.filetype.KickAssemblerFileType"
                   fieldName="INSTANCE"
                   extensions="asm"/>
