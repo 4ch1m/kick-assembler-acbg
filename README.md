@@ -58,7 +58,7 @@ Or go to the [plugin page](https://plugins.jetbrains.com/plugin/11988) on the [J
 Here's how to use/setup the plugin &hellip;
 
 ### Project
-Simply create a new `Kick Assember project` and complete all following steps to finish the project initialization.
+Simply create a new `Kick Assembler project` and complete all following steps to finish the project initialization.
 
 ![new_project](/screenshots/new_project.png?raw=true)
 
