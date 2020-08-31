@@ -39,6 +39,6 @@ publishPlugin {
 }
 
 group 'de.achimonline'
-version 1.4
+version 1.5
 
 intellij.plugins 'java'
