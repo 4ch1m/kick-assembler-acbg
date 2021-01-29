@@ -32,8 +32,6 @@
     ]]>
     </change-notes>
 
-    <idea-version since-build="201"/>
-
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.lang</depends>
     <depends>com.intellij.modules.java</depends>
@@ -86,11 +84,14 @@
         <internalFileTemplate
                 name="Kick Assembler file"/>
 
-        <applicationService serviceImplementation="de.achimonline.kickassembler.acbg.settings.KickAssemblerSettingsService"/>
+        <applicationService
+                serviceImplementation="de.achimonline.kickassembler.acbg.settings.KickAssemblerSettingsService"/>
     </extensions>
 
     <projectListeners>
-        <listener class="de.achimonline.kickassembler.acbg.project.KickAssemblerProjectListener" topic="com.intellij.openapi.wm.ex.ToolWindowManagerListener" />
+        <listener
+                class="de.achimonline.kickassembler.acbg.project.KickAssemblerProjectListener"
+                topic="com.intellij.openapi.wm.ex.ToolWindowManagerListener"/>
     </projectListeners>
 
     <actions>
@@ -99,7 +100,10 @@
             class="de.achimonline.kickassembler.acbg.actions.KickAssemblerFileAction"
             text="Kick Assembler File"
             description="Create new Kick Assembler file">
-                <add-to-group group-id="NewGroup" anchor="before" relative-to-action="NewFromTemplate"/>
+                <add-to-group
+                        group-id="NewGroup"
+                        anchor="before"
+                        relative-to-action="NewFromTemplate"/>
         </action>
     </actions>
 

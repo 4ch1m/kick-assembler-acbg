@@ -5,3 +5,4 @@ jflex-*.jar
 .gradle
 build
 out
+src/main/gen
