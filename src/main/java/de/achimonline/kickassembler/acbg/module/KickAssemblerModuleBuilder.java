@@ -65,7 +65,7 @@ public class KickAssemblerModuleBuilder extends ModuleBuilder implements ModuleB
     }
 
     @Override
-    protected boolean isAvailable() {
+    public boolean isAvailable() {
         return false;
     }
 
