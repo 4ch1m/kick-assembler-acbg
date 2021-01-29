@@ -51,17 +51,25 @@ intellij.plugins 'java'
 
 apply plugin: 'org.jetbrains.grammarkit'
 
-import org.jetbrains.grammarkit.tasks.*
+import org.jetbrains.grammarkit.tasks.GenerateLexer
+import org.jetbrains.grammarkit.tasks.GenerateParser
 
 task generateLexer(type: GenerateLexer) {
-    source = 'src/main/java/de/achimonline/kickassembler/acbg/lexer/KickAssembler.flex'
-    targetDir = 'src/main/gen/de/achimonline/kickassembler/acbg/lexer/'
-    targetClass = 'KickAssemblerLexer'
+    source 'src/main/java/de/achimonline/kickassembler/acbg/lexer/KickAssembler.flex'
+    targetDir 'src/main/gen/de/achimonline/kickassembler/acbg/lexer/'
+    targetClass 'KickAssemblerLexer'
+    purgeOldFiles true
 }
 
 task generateParser(type: GenerateParser) {
-    source = 'src/main/java/de/achimonline/kickassembler/acbg/psi/KickAssembler.bnf'
-    targetRoot = 'src/main/gen'
-    pathToParser = '/de/achimonline/kickassembler/acbg/parser/KickAssemblerParser.java'
-    pathToPsiRoot = '/de/achimonline/kickassembler/acbg/psi'
+    source 'src/main/java/de/achimonline/kickassembler/acbg/psi/KickAssembler.bnf'
+    targetRoot 'src/main/gen'
+    pathToParser '/de/achimonline/kickassembler/acbg/parser/KickAssemblerParser.java'
+    pathToPsiRoot '/de/achimonline/kickassembler/acbg/psi'
+    purgeOldFiles true
+}
+
+compileJava {
+    dependsOn generateLexer
+    dependsOn generateParser
 }
