@@ -27,7 +27,11 @@
     <change-notes><![CDATA[
       <b>1.5</b>
       <ul>
-        <li>...</li>
+        <li>necessary adjustments to work with the latest plugin APIs</li>
+        <li>automatic lexer/parser source generation upon build</li>
+        <li>updated library-/plugin-dependencies</li>
+        <li>gradle-wrapper update</li>
+        <li>other minor improvements</li>
       </ul>
     ]]>
     </change-notes>
