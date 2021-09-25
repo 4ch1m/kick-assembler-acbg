@@ -64,9 +64,11 @@
                 displayName="Kick Assembler"
                 instance="de.achimonline.kickassembler.acbg.settings.KickAssemblerSettingsConfigurable"/>
 
+        <!-- TODO: this seems to cause issues with current IntelliJ versions
         <programRunner
                 id="KickAssemblerRunner"
                 implementation="com.intellij.execution.runners.DefaultRunProgramRunner"/>
+        -->
 
         <configurationType
                 implementation="de.achimonline.kickassembler.acbg.runconfiguration.KickAssemblerRunConfigurationType"/>
