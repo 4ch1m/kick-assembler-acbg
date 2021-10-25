@@ -52,12 +52,6 @@ public class KickAssemblerSdk extends KickAssemblerSdkType {
         return IconLoader.findIcon("/icons/icon_16x16.png");
     }
 
-    @NotNull
-    @Override
-    public Icon getIconForAddAction() {
-        return IconLoader.findIcon("/icons/add_sdk_16x16.png");
-    }
-
     @Nullable
     @Override
     public String suggestHomePath() {
@@ -137,7 +131,7 @@ public class KickAssemblerSdk extends KickAssemblerSdkType {
                 notifyWarning(message("notification.jre.exception", jdke.getMessage()));
             } catch (SdkException sdke) {
                 notifyWarning(message("notification.sdk.exception", sdke.getMessage()));
-            } catch (IOException|InterruptedException e) {
+            } catch (IOException | InterruptedException e) {
                 notifyWarning(e.getMessage());
             }
         }
@@ -148,7 +142,7 @@ public class KickAssemblerSdk extends KickAssemblerSdkType {
     private String determineSdkVersionFromSdkHome(String sdkHome) throws JdkException, SdkException, IOException, InterruptedException {
         String javaExecutable = KickAssemblerProjectJdkTable.getJavaExecutableFromJdkNameOrPath(KickAssemblerSettings.storedSettings(ApplicationManager.getApplication()).getJrePathOrName());
 
-        String[] cmdArray = new String[] {
+        String[] cmdArray = new String[]{
                 javaExecutable, "-jar", determineJarPathFromSdkHome(sdkHome)
         };
 
