@@ -5,9 +5,6 @@
 
 ![editor](/screenshots/editor.png?raw=true)
 
-##### Build Status
-[![Build Status](https://travis-ci.org/4ch1m/kick-assembler-acbg.svg?branch=master)](https://travis-ci.org/4ch1m/kick-assembler-acbg)
-
 ## Table of contents
 * [Disclaimer](#disclaimer)
 * [Features](#features)
