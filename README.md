@@ -1,4 +1,4 @@
-![Kick Assembler - ACBG](/src/main/resources/icons/icon_64x64.png?raw=true) ![Retro Rules](/src/main/resources/retro_rules_564x64.png?raw=true)
+![Kick Assembler - ACBG](/src/main/resources/icons/icon_64x64.png?raw=true) ![Retro Rules](/src/main/resources/retro_rules_564x64.png?raw=true#gh-light-mode-only)
 
 # Kick Assembler <small><small><small>(... and chew bubble gum)</small></small></small>
 > A [Kick Assembler](http://theweb.dk/KickAssembler) language plugin for [IntelliJ IDEA](https://www.jetbrains.com/idea/).
@@ -176,4 +176,4 @@ That's about it; a one-click "build n' run".
 ## License
 Please read the [license](license) file.
 
-![Code 6502](/src/main/resources/code_6502_587x60.png?raw=true)
+![Code 6502](/src/main/resources/code_6502_587x60.png?raw=true#gh-light-mode-only)
