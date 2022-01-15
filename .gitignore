@@ -1,8 +1,6 @@
 .idea
 *.iml
-idea-flex.skeleton
-jflex-*.jar
 .gradle
-build
-out
-src/main/gen
+app/bin
+app/build
+app/src/main/gen

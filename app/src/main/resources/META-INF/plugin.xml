@@ -3,7 +3,11 @@
     <id>de.achimonline.kickassembler-acbg</id>
     <name>Kick Assembler (... and chew bubble gum)</name>
 
-    <vendor email="intellij@achimonline.de" url="https://plugins.jetbrains.com/space/index?pr=idea&amp;lg=4ch1m">Achim Seufert</vendor>
+    <vendor
+        email="intellij@achimonline.de"
+        url="https://plugins.jetbrains.com/space/index?pr=idea&amp;lg=4ch1m">
+        Achim Seufert
+    </vendor>
 
     <description><![CDATA[
     <p>
@@ -23,18 +27,6 @@
         Visit the <a href="https://github.com/4ch1m/kick-assembler-acbg">GitHub</a>-page for more information.
     </p>
     ]]></description>
-
-    <change-notes><![CDATA[
-      <b>1.5</b>
-      <ul>
-        <li>necessary adjustments to work with the latest plugin APIs</li>
-        <li>automatic lexer/parser source generation upon build</li>
-        <li>updated library-/plugin-dependencies</li>
-        <li>gradle-wrapper update</li>
-        <li>other minor improvements</li>
-      </ul>
-    ]]>
-    </change-notes>
 
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.lang</depends>
