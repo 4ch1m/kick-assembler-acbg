@@ -6,7 +6,7 @@
 - updated library-/plugin-dependencies ("Gradle IntelliJ Plugin", etc.)
 - reorganized directory-structure (including migration to Kotlin DSL for build-script)
 - Gradle-wrapper update
-- min IDE version set to "2020.3"
+- min IDE version set to "2021.3"
 
 ## [1.5.0]
 
