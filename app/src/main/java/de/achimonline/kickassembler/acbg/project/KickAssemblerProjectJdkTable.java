@@ -20,14 +20,7 @@ public class KickAssemblerProjectJdkTable {
                 if (jdk.getSdkType() instanceof JavaSdk) {
                     String homePath = jdk.getName().equals(jdkNameOrPath) ? jdk.getHomePath() : jdkNameOrPath;
                     String binPath = homePath + File.separator + "bin";
-
-                    File javaExecutable;
-
-                    if (SystemInfo.isWindows) {
-                        javaExecutable = new File(binPath + File.separator + "java.exe");
-                    } else {
-                        javaExecutable = new File(binPath + File.separator + "java");
-                    }
+                    File javaExecutable = new File(binPath + File.separator + (SystemInfo.isWindows ? "java.exe" : "java"));
 
                     if (javaExecutable.exists() &&
                         javaExecutable.isFile() &&

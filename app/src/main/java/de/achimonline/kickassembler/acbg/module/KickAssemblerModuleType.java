@@ -8,6 +8,7 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 
+@SuppressWarnings("DialogTitleCapitalization")
 public class KickAssemblerModuleType extends ModuleType<KickAssemblerModuleBuilder> {
     private static final String KICK_ASSEMBLER_MODULE = "KickAssemblerModule";
 
@@ -39,7 +40,7 @@ public class KickAssemblerModuleType extends ModuleType<KickAssemblerModuleBuild
     }
 
     @Override
-    public Icon getNodeIcon(boolean isOpened) {
-        return IconLoader.findIcon("/icons/icon_16x16.png");
+    public @NotNull Icon getNodeIcon(boolean isOpened) {
+        return IconLoader.getIcon("/icons/icon_16x16.png", KickAssemblerModuleType.class);
     }
 }

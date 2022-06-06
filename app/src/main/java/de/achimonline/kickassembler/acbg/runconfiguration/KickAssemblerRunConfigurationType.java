@@ -13,7 +13,7 @@ public class KickAssemblerRunConfigurationType extends ConfigurationTypeBase imp
         super("KickAssemblerRunConfigurationType",
               message("runconfiguration.type.name"),
               message("runconfiguration.type.description"),
-              IconLoader.findIcon("/icons/icon_16x16.png"));
+              IconLoader.getIcon("/icons/icon_16x16.png", KickAssemblerRunConfigurationType.class));
 
         addFactory(new KickAssemblerConfigurationFactory(this));
     }

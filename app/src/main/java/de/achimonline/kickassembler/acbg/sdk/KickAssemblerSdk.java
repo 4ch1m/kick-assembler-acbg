@@ -49,7 +49,7 @@ public class KickAssemblerSdk extends KickAssemblerSdkType {
 
     @Override
     public Icon getIcon() {
-        return IconLoader.findIcon("/icons/icon_16x16.png");
+        return IconLoader.getIcon("/icons/icon_16x16.png", KickAssemblerSdk.class);
     }
 
     @Nullable
@@ -59,7 +59,7 @@ public class KickAssemblerSdk extends KickAssemblerSdkType {
     }
 
     @Override
-    public boolean isValidSdkHome(String path) {
+    public boolean isValidSdkHome(@NotNull String path) {
         if (!(new File(path).isDirectory())) {
             return false;
         }
@@ -76,7 +76,7 @@ public class KickAssemblerSdk extends KickAssemblerSdkType {
     }
 
     @Override
-    public String suggestSdkName(String currentSdkName, String sdkHome) {
+    public @NotNull String suggestSdkName(String currentSdkName, @NotNull String sdkHome) {
         return getVersionString(sdkHome);
     }
 
@@ -122,9 +122,7 @@ public class KickAssemblerSdk extends KickAssemblerSdkType {
             try {
                 String sdkVersion = determineSdkVersionFromSdkHome(sdkHome);
 
-                if (sdkVersion != null) {
-                    cachedVersions.put(sdkHome, sdkVersion);
-                }
+                cachedVersions.put(sdkHome, sdkVersion);
 
                 return sdkVersion;
             } catch (JdkException jdke) {

@@ -25,54 +25,49 @@ public class KickAssemblerParserDefinition implements ParserDefinition {
 
     @NotNull
     @Override
-    public Lexer createLexer(Project project)
-    {
+    public Lexer createLexer(Project project) {
         return new KickAssemblerLexerAdapter();
     }
 
     @NotNull
-    public TokenSet getWhitespaceTokens()
-    {
+    public TokenSet getWhitespaceTokens() {
         return WHITE_SPACES;
     }
 
     @NotNull
-    public TokenSet getCommentTokens()
-    {
+    public TokenSet getCommentTokens() {
         return COMMENTS;
     }
 
     @NotNull
-    public TokenSet getStringLiteralElements()
-    {
+    public TokenSet getStringLiteralElements() {
         return TokenSet.EMPTY;
     }
 
     @NotNull
-    public PsiParser createParser(final Project project)
-    {
+    public PsiParser createParser(final Project project) {
         return new KickAssemblerParser();
     }
 
+    @NotNull
     @Override
-    public IFileElementType getFileNodeType()
-    {
+    public IFileElementType getFileNodeType() {
         return FILE;
     }
 
-    public PsiFile createFile(FileViewProvider viewProvider)
-    {
+    @NotNull
+    public PsiFile createFile(@NotNull FileViewProvider viewProvider) {
         return new KickAssemblerFile(viewProvider);
     }
 
+    @NotNull
     @Override
     public SpaceRequirements spaceExistenceTypeBetweenTokens(ASTNode left, ASTNode right) {
         return SpaceRequirements.MAY;
     }
 
     @NotNull
-    public PsiElement createElement(ASTNode node)
-    {
+    public PsiElement createElement(ASTNode node) {
         return KickAssemblerTypes.Factory.createElement(node);
     }
 }

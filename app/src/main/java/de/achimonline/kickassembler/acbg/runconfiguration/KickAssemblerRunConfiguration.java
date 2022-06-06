@@ -55,10 +55,12 @@ public class KickAssemblerRunConfiguration extends ModuleBasedConfiguration {
         return new KickAssemblerSettingsEditor(getProject());
     }
 
+    @SuppressWarnings("RedundantThrows")
     @Override
     public void checkConfiguration() throws RuntimeConfigurationException {
     }
 
+    @SuppressWarnings("RedundantThrows")
     @Nullable
     @Override
     public RunProfileState getState(@NotNull Executor executor, @NotNull ExecutionEnvironment environment) throws ExecutionException {
@@ -93,7 +95,7 @@ public class KickAssemblerRunConfiguration extends ModuleBasedConfiguration {
 
         private String programParameters;
         private String workingDirectory;
-        private Map<String, String> envs = new HashMap<>();
+        private final Map<String, String> envs = new HashMap<>();
         private boolean passParentEnvs;
 
         public KickAssemblerProgramParameters() {
@@ -150,6 +152,7 @@ public class KickAssemblerRunConfiguration extends ModuleBasedConfiguration {
         }
 
         private static String createDefaultProgramParameters() {
+            //noinspection StringBufferReplaceableByString
             return new StringBuilder()
                     .append("-symbolfiledir ")
                     .append("$").append(PROJECT_FILE_DIR_MACRO.getName()).append("$")

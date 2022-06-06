@@ -92,10 +92,6 @@ public class KickAssemblerModuleBuilder extends ModuleBuilder implements ModuleB
     }
 
     private VelocityContext createVelocityContext() {
-        VelocityContext velocityContext = new VelocityContext();
-// TODO add substitutions as needed ...
-//        velocityContext.put("key", "value");
-
-        return velocityContext;
+        return new VelocityContext(); // TODO add needed substitutions
     }
 }

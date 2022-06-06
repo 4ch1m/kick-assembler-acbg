@@ -113,9 +113,8 @@ public class KickAssemblerSyntaxHighlighter extends SyntaxHighlighterBase {
         return new KickAssemblerLexerAdapter();
     }
 
-    @NotNull
     @Override
-    public TextAttributesKey[] getTokenHighlights(IElementType tokenType) {
+    public TextAttributesKey @NotNull [] getTokenHighlights(IElementType tokenType) {
         return pack(TYPE_KEY_MAP.get(tokenType));
     }
 

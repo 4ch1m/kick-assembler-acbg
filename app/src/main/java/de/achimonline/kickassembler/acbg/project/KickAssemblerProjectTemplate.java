@@ -29,6 +29,6 @@ public class KickAssemblerProjectTemplate extends BuilderBasedTemplate {
 
     @Override
     public Icon getIcon() {
-        return IconLoader.findIcon("/icons/icon_16x16.png");
+        return IconLoader.getIcon("/icons/icon_16x16.png", KickAssemblerProjectTemplate.class);
     }
 }

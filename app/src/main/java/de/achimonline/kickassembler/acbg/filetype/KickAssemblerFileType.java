@@ -38,6 +38,6 @@ public class KickAssemblerFileType extends LanguageFileType {
     @Nullable
     @Override
     public Icon getIcon() {
-        return IconLoader.findIcon("/icons/icon_16x16.png");
+        return IconLoader.getIcon("/icons/icon_16x16.png", KickAssemblerFileType.class);
     }
 }

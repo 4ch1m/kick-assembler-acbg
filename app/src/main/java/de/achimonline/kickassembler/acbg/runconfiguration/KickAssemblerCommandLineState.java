@@ -15,9 +15,12 @@ import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.DataContext;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.io.OutputStream;
 
 public class KickAssemblerCommandLineState extends CommandLineState {
-    private KickAssemblerRunConfiguration kickAssemblerRunConfiguration;
+    private final KickAssemblerRunConfiguration kickAssemblerRunConfiguration;
     private DataContext dataContext;
 
     protected KickAssemblerCommandLineState(KickAssemblerRunConfiguration kickAssemblerRunConfiguration, ExecutionEnvironment executionEnvironment) {
@@ -29,10 +32,29 @@ public class KickAssemblerCommandLineState extends CommandLineState {
         DataManager.getInstance().getDataContextFromFocusAsync().then(it -> dataContext = it);
     }
 
+    @SuppressWarnings("RedundantThrows")
     @NotNull
     @Override
     protected ProcessHandler startProcess() throws ExecutionException {
-        return null; // TODO
+        return new ProcessHandler() {  // TODO ...
+            @Override
+            protected void destroyProcessImpl() {
+            }
+
+            @Override
+            protected void detachProcessImpl() {
+            }
+
+            @Override
+            public boolean detachIsDefault() {
+                return false;
+            }
+
+            @Override
+            public @Nullable OutputStream getProcessInput() {
+                return null;
+            }
+        };
     }
 
     @NotNull

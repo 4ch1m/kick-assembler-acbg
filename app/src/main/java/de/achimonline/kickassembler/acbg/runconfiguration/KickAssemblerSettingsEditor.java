@@ -15,6 +15,7 @@ import javax.swing.*;
 
 import static de.achimonline.kickassembler.acbg.properties.KickAssemblerProperties.message;
 
+@SuppressWarnings("DialogTitleCapitalization")
 public class KickAssemblerSettingsEditor extends SettingsEditor<KickAssemblerRunConfiguration> {
     private JPanel panel;
 
@@ -38,6 +39,7 @@ public class KickAssemblerSettingsEditor extends SettingsEditor<KickAssemblerRun
         commonProgramParametersPanel.reset(kickAssemblerRunConfiguration.getKickAssemblerProgramParameters());
     }
 
+    @SuppressWarnings("RedundantThrows")
     @Override
     protected void applyEditorTo(@NotNull KickAssemblerRunConfiguration kickAssemblerRunConfiguration) throws ConfigurationException {
         kickAssemblerRunConfiguration.setKickAssemblerFile(kickAssemblerFile.getComponent().getText());

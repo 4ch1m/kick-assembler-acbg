@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class KickAssemblerRunConfigurationProducer extends LazyRunConfigurationProducer<KickAssemblerRunConfiguration> {
     @Override
-    protected boolean setupConfigurationFromContext(KickAssemblerRunConfiguration configuration, ConfigurationContext context, Ref<PsiElement> sourceElement) {
+    protected boolean setupConfigurationFromContext(@NotNull KickAssemblerRunConfiguration configuration, ConfigurationContext context, @NotNull Ref<PsiElement> sourceElement) {
         Location location = context.getLocation();
 
         if (location == null) {
@@ -52,7 +52,6 @@ public class KickAssemblerRunConfigurationProducer extends LazyRunConfigurationP
     @NotNull
     @Override
     public ConfigurationFactory getConfigurationFactory() {
-        KickAssemblerRunConfigurationType kickAssemblerRunConfigurationType = new KickAssemblerRunConfigurationType();
-        return kickAssemblerRunConfigurationType.getConfigurationFactories()[0];
+        return new KickAssemblerRunConfigurationType().getConfigurationFactories()[0];
     }
 }

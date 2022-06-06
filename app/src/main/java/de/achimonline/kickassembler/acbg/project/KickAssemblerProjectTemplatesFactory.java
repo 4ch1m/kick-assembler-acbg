@@ -13,7 +13,7 @@ import javax.swing.*;
 public class KickAssemblerProjectTemplatesFactory extends ProjectTemplatesFactory {
     @NotNull
     @Override
-    public String[] getGroups() {
+    public String @NotNull [] getGroups() {
         return new String[]{"Kick Assembler"};
     }
 
@@ -24,12 +24,12 @@ public class KickAssemblerProjectTemplatesFactory extends ProjectTemplatesFactor
 
     @Override
     public Icon getGroupIcon(String group) {
-        return IconLoader.findIcon("/icons/icon_16x16.png");
+        return IconLoader.getIcon("/icons/icon_16x16.png", KickAssemblerProjectTemplate.class);
     }
 
     @NotNull
     @Override
-    public ProjectTemplate[] createTemplates(@Nullable String group, WizardContext context) {
+    public ProjectTemplate @NotNull [] createTemplates(@Nullable String group, @NotNull WizardContext context) {
         return new ProjectTemplate[]{new KickAssemblerProjectTemplate(new KickAssemblerModuleBuilder())};
     }
 }

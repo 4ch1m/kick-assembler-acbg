@@ -32,6 +32,7 @@ public class KickAssemblerSettingsConfigurable implements Configurable {
         return kickAssemblerSettingsPane != null && kickAssemblerSettingsPane.isModified();
     }
 
+    @SuppressWarnings("RedundantThrows")
     @Override
     public void apply() throws ConfigurationException {
         kickAssemblerSettingsPane.storeSettings(KickAssemblerSettingsService.getInstance().getState());
