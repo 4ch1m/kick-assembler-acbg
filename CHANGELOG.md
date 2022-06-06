@@ -1,5 +1,14 @@
 # Kick Assembler (... and chew bubble gum) | ChangeLog
 
+## [1.7.0]
+
+### Changed
+- upgraded library-/plugin-dependencies
+- various refactorings (mostly code-inspection warnings)
+
+### Fixed
+- fixed RunConfiguration handling (which was unnoticeably broken due to plugin-API changes; showed "SDK is not specified for module")
+
 ## [1.6.0]
 
 ### Changed
