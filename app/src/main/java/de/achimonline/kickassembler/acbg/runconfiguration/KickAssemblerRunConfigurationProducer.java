@@ -4,7 +4,6 @@ import com.intellij.execution.Location;
 import com.intellij.execution.actions.ConfigurationContext;
 import com.intellij.execution.actions.LazyRunConfigurationProducer;
 import com.intellij.execution.configurations.ConfigurationFactory;
-import com.intellij.openapi.module.Module;
 import com.intellij.openapi.util.Ref;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
@@ -34,12 +33,6 @@ public class KickAssemblerRunConfigurationProducer extends LazyRunConfigurationP
 
         configuration.setName(containingFile.getName());
         configuration.setKickAssemblerFile(containingFile.getVirtualFile().getPath());
-
-        Module contextModule = context.getModule();
-
-        if (contextModule != null) {
-            configuration.setModule(contextModule);
-        }
 
         return true;
     }

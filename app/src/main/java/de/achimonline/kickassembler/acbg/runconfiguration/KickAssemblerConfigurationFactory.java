@@ -3,7 +3,6 @@ package de.achimonline.kickassembler.acbg.runconfiguration;
 import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.execution.configurations.ConfigurationType;
 import com.intellij.execution.configurations.RunConfiguration;
-import com.intellij.execution.configurations.RunConfigurationModule;
 import com.intellij.openapi.project.Project;
 import de.achimonline.kickassembler.acbg.properties.KickAssemblerProperties;
 import org.jetbrains.annotations.NonNls;
@@ -17,7 +16,7 @@ public class KickAssemblerConfigurationFactory extends ConfigurationFactory {
     @NotNull
     @Override
     public RunConfiguration createTemplateConfiguration(@NotNull Project project) {
-        return new KickAssemblerRunConfiguration(KickAssemblerProperties.message("runconfiguration.name"), new RunConfigurationModule(project), this);
+        return new KickAssemblerRunConfiguration(project, this, KickAssemblerProperties.message("runconfiguration.name"));
     }
 
     @Override

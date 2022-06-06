@@ -62,7 +62,7 @@ public class KickAssemblerCommandLine {
         String workingDirectory = kickAssemblerRunConfiguration.getKickAssemblerProgramParameters().getWorkingDirectory();
 
         if (StringUtils.isEmpty(workingDirectory)) {
-            workingDirectory = kickAssemblerRunConfiguration.getConfigurationModule().getProject().getBasePath();
+            workingDirectory = kickAssemblerRunConfiguration.getProject().getBasePath();
         } else {
             try {
                 workingDirectory = MACRO_MANAGER.expandMacrosInString(workingDirectory, true, dataContext);

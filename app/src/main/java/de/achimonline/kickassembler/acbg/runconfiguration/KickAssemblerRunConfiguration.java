@@ -4,16 +4,12 @@ import com.intellij.execution.CommonProgramRunConfigurationParameters;
 import com.intellij.execution.ExecutionException;
 import com.intellij.execution.Executor;
 import com.intellij.execution.configurations.ConfigurationFactory;
-import com.intellij.execution.configurations.ModuleBasedConfiguration;
 import com.intellij.execution.configurations.RunConfiguration;
-import com.intellij.execution.configurations.RunConfigurationModule;
+import com.intellij.execution.configurations.RunConfigurationBase;
 import com.intellij.execution.configurations.RunProfileState;
-import com.intellij.execution.configurations.RuntimeConfigurationException;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.ide.macro.Macro;
 import com.intellij.ide.macro.ProjectFileDirMacro;
-import com.intellij.openapi.module.Module;
-import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.options.SettingsEditor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.InvalidDataException;
@@ -26,13 +22,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.Collectors;
 
-public class KickAssemblerRunConfiguration extends ModuleBasedConfiguration {
+public class KickAssemblerRunConfiguration extends RunConfigurationBase {
     @Getter
     @Setter
     private String kickAssemblerFile;
@@ -45,19 +38,14 @@ public class KickAssemblerRunConfiguration extends ModuleBasedConfiguration {
     @Setter
     private KickAssemblerProgramParameters kickAssemblerProgramParameters = new KickAssemblerProgramParameters();
 
-    public KickAssemblerRunConfiguration(String name, @NotNull RunConfigurationModule configurationModule, @NotNull ConfigurationFactory factory) {
-        super(name, configurationModule, factory);
+    protected KickAssemblerRunConfiguration(@NotNull Project project, @Nullable ConfigurationFactory configurationFactory, @Nullable String name) {
+        super(project, configurationFactory, name);
     }
 
     @NotNull
     @Override
     public SettingsEditor<? extends RunConfiguration> getConfigurationEditor() {
         return new KickAssemblerSettingsEditor(getProject());
-    }
-
-    @SuppressWarnings("RedundantThrows")
-    @Override
-    public void checkConfiguration() throws RuntimeConfigurationException {
     }
 
     @SuppressWarnings("RedundantThrows")
@@ -79,13 +67,6 @@ public class KickAssemblerRunConfiguration extends ModuleBasedConfiguration {
         super.writeExternal(element);
 
         XmlSerializer.serializeInto(this, element);
-    }
-
-    @Override
-    public Collection<Module> getValidModules() {
-        return Arrays.stream(ModuleManager.getInstance(getProject()).getModules())
-                .filter(module -> !module.isDisposed())
-                .collect(Collectors.toList());
     }
 
     protected static class KickAssemblerProgramParameters implements CommonProgramRunConfigurationParameters {
