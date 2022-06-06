@@ -60,7 +60,6 @@ public class KickAssemblerCommandLineTest {
     public void resolveWorkingDirectoryAndExpandMacros_empty() throws Exception {
         when(kickAssemblerRunConfiguration.getKickAssemblerProgramParameters()).thenReturn(kickAssemblerProgramParameters);
         when(kickAssemblerProgramParameters.getWorkingDirectory()).thenReturn(StringUtils.EMPTY);
-        when(kickAssemblerRunConfiguration.getConfigurationModule()).thenReturn(runConfigurationModule);
         when(runConfigurationModule.getProject()).thenReturn(project);
         when(project.getBasePath()).thenReturn(BASE_PATH);
 
