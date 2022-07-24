@@ -45,7 +45,7 @@ In addition to the IntelliJ's wide range of built-in functionality (like version
 ## Installation
 Use the IDE's built-in plugin system:
 
-* <kbd>File</kbd> &rarr; <kbd>Settings</kbd> &rarr; <kbd>Plugins</kbd> &rarr; <kbd>Marketplace</kbd>
+* <kbd>File</kbd> &rarr; <kbd>Settings&hellip;</kbd> &rarr; <kbd>Plugins</kbd> &rarr; <kbd>Marketplace</kbd>
 * search for "Kick Assembler"
 * click the <kbd>Install</kbd>-button
 
@@ -165,7 +165,7 @@ That's about it; a one-click "build n' run".
 
 ## Credits
 * [Kick Assembler](http://theweb.dk/KickAssembler) created by Mads Nielsen
-* _Sunglasses_ icon made by [Yannick](https://www.flaticon.com/authors/yannick) ([www.flaticon.com](www.flaticon.com)) 
+* _Sunglasses_ icon made by [Yannick Lung](https://yannicklung.com)
 
 ## Author
 :email: [Achim Seufert](mailto:kickassembler-acbg@achimonline.de)
