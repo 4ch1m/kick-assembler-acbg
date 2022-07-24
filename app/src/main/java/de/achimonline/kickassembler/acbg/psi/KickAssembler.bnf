@@ -17,6 +17,8 @@ kickAssemblerFile ::= root*
 
 root ::= ( STRING |
            NUMBER |
+           BOOLEAN |
+           NULL |
 
            LEFT_PARENTHESES |
            RIGHT_PARENTHESES |
