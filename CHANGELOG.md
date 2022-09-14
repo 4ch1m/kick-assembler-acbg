@@ -1,5 +1,11 @@
 # Kick Assembler (... and chew bubble gum) | ChangeLog
 
+## [1.8.0]
+
+### Changed
+- upgraded plugin-dependencies
+- improved syntax highlighting (revised Flex/BNF definitions)
+
 ## [1.7.0]
 
 ### Changed
