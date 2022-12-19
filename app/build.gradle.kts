@@ -26,8 +26,8 @@ intellij {
     pluginName.set(properties("pluginName"))
     version.set(properties("platformVersion"))
     type.set(properties("platformType"))
-
     plugins.set(properties("platformPlugins").split(',').map(String::trim).filter(String::isNotEmpty))
+    updateSinceUntilBuild.set(false)
 }
 
 dependencies {
@@ -57,14 +57,14 @@ tasks {
         version.set(properties("pluginVersion"))
         sinceBuild.set(properties("pluginSinceBuild"))
         changeNotes.set(provider {
-            changelog.run {
-                getOrNull(properties("pluginVersion")) ?: getLatest()
-            }.toHTML()
+            changelog.renderItem(
+                changelog.getLatest(),
+                org.jetbrains.changelog.Changelog.OutputType.HTML
+            )
         })
     }
 
     publishPlugin {
-        dependsOn("patchChangelog")
         if (project.hasProperty("JB_PLUGIN_PUBLISH_TOKEN")) {
             token.set(project.property("JB_PLUGIN_PUBLISH_TOKEN").toString())
         }
