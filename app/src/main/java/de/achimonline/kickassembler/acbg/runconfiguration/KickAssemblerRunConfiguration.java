@@ -25,7 +25,7 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
-public class KickAssemblerRunConfiguration extends RunConfigurationBase {
+public class KickAssemblerRunConfiguration<T> extends RunConfigurationBase<T> {
     @Getter
     @Setter
     private String kickAssemblerFile;
