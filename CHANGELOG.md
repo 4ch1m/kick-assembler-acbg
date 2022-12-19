@@ -1,6 +1,8 @@
 # Kick Assembler (... and chew bubble gum) | ChangeLog
 
 ## [1.9.0]
+
+### Changed
 - dependency upgrades
 - Gradle-wrapper update
 - other minor updates
