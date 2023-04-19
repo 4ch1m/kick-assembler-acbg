@@ -1,6 +1,6 @@
-![Retro Rules](app/src/main/resources/retro_rules_564x64_w.png#gh-light-mode-only) ![Retro Rules](app/src/main/resources/retro_rules_564x64_b.png#gh-dark-mode-only)
+![Retro Rules](src/main/resources/retro_rules_564x64_w.png#gh-light-mode-only) ![Retro Rules](src/main/resources/retro_rules_564x64_b.png#gh-dark-mode-only)
 
-# ![Kick Assembler - ACBG](app/src/main/resources/META-INF/pluginIcon.png) Kick Assembler <small><small><small>(... and chew bubble gum)</small></small></small>
+# ![Kick Assembler - ACBG](src/main/resources/META-INF/pluginIcon.png) Kick Assembler <small><small><small>(... and chew bubble gum)</small></small></small>
 > A [Kick Assembler](http://theweb.dk/KickAssembler) language plugin for [IntelliJ IDEA](https://www.jetbrains.com/idea/).
 
 ![editor](screenshots/editor.png)
@@ -61,14 +61,14 @@ Simply create a new `Kick Assembler project` and complete all following steps to
 
 ### JRE and SDK
 #### JRE
-The JRE - used to run Kick Assembler - must be configured via `File` --> `Settings...` --> `Languages &amp; Frameworks` --> `Kick Assembler`.
+The _Java Runtime Environment_ (JRE) - used to run Kick Assembler - must be configured via `File` --> `Settings...` --> `Languages & Frameworks` --> `Kick Assembler`.
 
 ![setup_jre](screenshots/setup_jre.png)
 
 This step is **mandatory**, since the following SDK-setup relies on an existing/configured JRE. 
 
 #### SDK
-In the project's setup-page create a new Kick Assembler SDK:
+In the project's setup-page create a new Kick Assembler _Software Development Kit_ (SDK):
 
 ![setup_project_sdk](screenshots/setup_project_sdk.png)
 
@@ -173,4 +173,4 @@ That's about it; a one-click "build n' run".
 ## License
 Please read the [license](LICENSE) file.
 
-![Code 6502](app/src/main/resources/code_6502_587x60_w.png#gh-light-mode-only) ![Code 6502](app/src/main/resources/code_6502_587x60_b.png#gh-dark-mode-only)
+![Code 6502](src/main/resources/code_6502_587x60_w.png#gh-light-mode-only) ![Code 6502](src/main/resources/code_6502_587x60_b.png#gh-dark-mode-only)

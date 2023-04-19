@@ -1,4 +1,13 @@
-# Kick Assembler (... and chew bubble gum) | ChangeLog
+## [Unreleased]
+
+### Changed
+- code/project structure reorganized
+- "plugin settings" and "run configuration dialog" refactored (using Kotlin / UI DSL)
+- unit tests re-activated
+- build-script streamlined
+- dependency upgrades
+- Gradle-wrapper update
+- several minor improvements
 
 ## [1.9.0]
 
