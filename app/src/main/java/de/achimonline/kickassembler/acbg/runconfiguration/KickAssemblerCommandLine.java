@@ -13,7 +13,7 @@ import de.achimonline.kickassembler.acbg.sdk.KickAssemblerSdk;
 import de.achimonline.kickassembler.acbg.settings.KickAssemblerSettings;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 
