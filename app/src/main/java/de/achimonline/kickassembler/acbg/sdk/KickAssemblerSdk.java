@@ -2,19 +2,14 @@ package de.achimonline.kickassembler.acbg.sdk;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.diagnostic.Logger;
-import com.intellij.openapi.projectRoots.AdditionalDataConfigurable;
-import com.intellij.openapi.projectRoots.Sdk;
-import com.intellij.openapi.projectRoots.SdkAdditionalData;
-import com.intellij.openapi.projectRoots.SdkModel;
-import com.intellij.openapi.projectRoots.SdkModificator;
-import com.intellij.openapi.projectRoots.SdkType;
+import com.intellij.openapi.projectRoots.*;
 import com.intellij.openapi.util.IconLoader;
 import de.achimonline.kickassembler.acbg.exception.JdkException;
 import de.achimonline.kickassembler.acbg.exception.SdkException;
 import de.achimonline.kickassembler.acbg.project.KickAssemblerProjectJdkTable;
 import de.achimonline.kickassembler.acbg.settings.KickAssemblerSettings;
 import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -26,6 +21,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -76,8 +72,9 @@ public class KickAssemblerSdk extends KickAssemblerSdkType {
     }
 
     @Override
-    public @NotNull String suggestSdkName(String currentSdkName, @NotNull String sdkHome) {
-        return getVersionString(sdkHome);
+    public @NotNull String suggestSdkName(final String currentSdkName,
+                                          final @NotNull String sdkHome) {
+        return Objects.requireNonNull(getVersionString(sdkHome));
     }
 
     @Nullable
@@ -107,13 +104,13 @@ public class KickAssemblerSdk extends KickAssemblerSdkType {
 
     @Nullable
     @Override
-    public String getVersionString(@NotNull Sdk sdk) {
-        return getVersionString(sdk.getHomePath());
+    public String getVersionString(@NotNull final Sdk sdk) {
+        return sdk.getHomePath() != null ? getVersionString(sdk.getHomePath()) : null;
     }
 
     @Nullable
     @Override
-    public String getVersionString(String sdkHome) {
+    public String getVersionString(@NotNull final String sdkHome) {
         if (StringUtils.isNotEmpty(sdkHome)) {
             if (cachedVersions.containsKey(sdkHome)) {
                 return cachedVersions.get(sdkHome);
@@ -137,8 +134,11 @@ public class KickAssemblerSdk extends KickAssemblerSdkType {
         return null;
     }
 
-    private String determineSdkVersionFromSdkHome(String sdkHome) throws JdkException, SdkException, IOException, InterruptedException {
-        String javaExecutable = KickAssemblerProjectJdkTable.getJavaExecutableFromJdkNameOrPath(KickAssemblerSettings.storedSettings(ApplicationManager.getApplication()).getJrePathOrName());
+    private String determineSdkVersionFromSdkHome(final String sdkHome) throws JdkException, SdkException, IOException, InterruptedException {
+        final String javaExecutable =
+                KickAssemblerProjectJdkTable
+                        .getJavaExecutableFromJdkNameOrPath(KickAssemblerSettings.storedSettings(ApplicationManager.getApplication())
+                                .getJrePathOrName());
 
         String[] cmdArray = new String[]{
                 javaExecutable, "-jar", determineJarPathFromSdkHome(sdkHome)

@@ -1,5 +1,11 @@
 # Kick Assembler (... and chew bubble gum) | ChangeLog
 
+## [1.10.0]
+
+### Changed
+- updated for IntelliJ 2023.3.5
+- use default project SDK if none is set in the Kick Assembler plugin settings
+
 ## [1.9.0]
 
 ### Changed
