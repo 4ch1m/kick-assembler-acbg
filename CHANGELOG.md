@@ -1,13 +1,14 @@
-## [Unreleased]
+## [1.10.0]
 
 ### Changed
 - code/project structure reorganized
 - "plugin settings" and "run configuration dialog" refactored (using Kotlin / UI DSL)
+- improved JDK detection/handling
 - unit tests re-activated
 - build-script streamlined
 - dependency upgrades
 - Gradle-wrapper update
-- several minor improvements
+- several other (minor) improvements
 
 ## [1.9.0]
 

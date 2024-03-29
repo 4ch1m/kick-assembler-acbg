@@ -15,7 +15,7 @@ import de.achimonline.kickassembler.acbg.settings.KickAssemblerSettings;
 import de.achimonline.kickassembler.acbg.settings.KickAssemblerSettingsState;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;

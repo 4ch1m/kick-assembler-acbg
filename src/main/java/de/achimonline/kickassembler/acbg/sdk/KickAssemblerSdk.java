@@ -15,7 +15,7 @@ import de.achimonline.kickassembler.acbg.jdk.KickAssemblerJdk;
 import de.achimonline.kickassembler.acbg.settings.KickAssemblerSettings;
 import de.achimonline.kickassembler.acbg.settings.KickAssemblerSettingsState;
 import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

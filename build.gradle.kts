@@ -7,13 +7,13 @@ description = properties("pluginDescription")
 
 plugins {
     id("java")
-    id("org.jetbrains.kotlin.jvm") version "1.8.20"
-    id("org.jetbrains.intellij") version "1.13.3"
-    id("org.jetbrains.changelog") version "2.0.0"
-    id("org.jetbrains.grammarkit") version "2022.3.1"
-    id("com.github.ben-manes.versions") version "0.46.0"
+    id("org.jetbrains.kotlin.jvm") version "1.9.23"
+    id("org.jetbrains.intellij") version "1.17.3"
+    id("org.jetbrains.changelog") version "2.2.0"
+    id("org.jetbrains.grammarkit") version "2022.3.2.2"
+    id("com.github.ben-manes.versions") version "0.51.0"
 
-    kotlin("plugin.lombok") version "1.8.20"
+    kotlin("plugin.lombok") version "1.9.23"
 }
 
 repositories {
@@ -21,11 +21,11 @@ repositories {
 }
 
 dependencies {
-    implementation("org.projectlombok:lombok:1.18.26")
-    annotationProcessor("org.projectlombok:lombok:1.18.26")
+    implementation("org.projectlombok:lombok:1.18.32")
+    annotationProcessor("org.projectlombok:lombok:1.18.32")
 
     testImplementation("junit:junit:4.13.2")
-    testImplementation("org.mockito:mockito-core:5.3.0")
+    testImplementation("org.mockito:mockito-core:5.11.0")
 }
 
 sourceSets {
@@ -81,14 +81,13 @@ tasks {
 
     generateLexer {
         sourceFile.set(File("src/main/resources/grammar/KickAssembler.flex"))
-        targetDir.set("src/generated/java/de/achimonline/kickassembler/acbg/lexer")
-        targetClass.set("KickAssemblerLexer")
+        targetOutputDir.set(File("src/generated/java/de/achimonline/kickassembler/acbg/lexer"))
         purgeOldFiles.set(true)
     }
 
     generateParser {
         sourceFile.set(File("src/main/resources/grammar/KickAssembler.bnf"))
-        targetRoot.set("src/generated/java")
+        targetRootOutputDir.set(File("src/generated/java"))
         pathToParser.set("/de/achimonline/kickassembler/acbg/parser/KickAssemblerParser.java")
         pathToPsiRoot.set("/de/achimonline/kickassembler/acbg/psi")
         purgeOldFiles.set(true)

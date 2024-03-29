@@ -31,7 +31,7 @@ class KickAssemblerSettingsConfigurable : BoundConfigurable(message("settings.na
                             JrePathEditor::setJreNameOrPath,
                             settings::jreNameOrPath.toMutableProperty()
                         )
-                }
+                }.rowComment(message("settings.jre.comment"))
             }
         }
     }

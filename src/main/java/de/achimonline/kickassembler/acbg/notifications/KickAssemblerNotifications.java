@@ -3,7 +3,7 @@ package de.achimonline.kickassembler.acbg.notifications;
 import com.intellij.notification.Notification;
 import com.intellij.notification.NotificationType;
 import com.intellij.notification.Notifications;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 public class KickAssemblerNotifications {
     private static final String GROUP_ID = "KICKASS_NOTIFICATIONS";

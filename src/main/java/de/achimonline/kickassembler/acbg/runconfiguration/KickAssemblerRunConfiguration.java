@@ -25,17 +25,13 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
+@Setter
+@Getter
 public class KickAssemblerRunConfiguration<T> extends RunConfigurationBase<T> {
-    @Getter
-    @Setter
     private String kickAssemblerFile;
 
-    @Getter
-    @Setter
     private String kickAssemblerSdkPathOrName;
 
-    @Getter
-    @Setter
     private KickAssemblerProgramParameters kickAssemblerProgramParameters = new KickAssemblerProgramParameters();
 
     protected KickAssemblerRunConfiguration(@NotNull Project project, @Nullable ConfigurationFactory configurationFactory, @Nullable String name) {

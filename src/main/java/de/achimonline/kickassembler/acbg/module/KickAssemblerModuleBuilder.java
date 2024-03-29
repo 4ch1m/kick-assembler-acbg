@@ -16,7 +16,7 @@ import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import de.achimonline.kickassembler.acbg.sdk.KickAssemblerSdkType;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.velocity.VelocityContext;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
