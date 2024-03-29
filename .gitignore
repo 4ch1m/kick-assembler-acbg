@@ -1,6 +1,5 @@
 .idea
 *.iml
 .gradle
-app/bin
-app/build
-app/src/main/gen
+build
+src/generated
