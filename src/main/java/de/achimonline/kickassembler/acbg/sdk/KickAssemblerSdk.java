@@ -101,7 +101,6 @@ public class KickAssemblerSdk extends KickAssemblerSdkType {
     public boolean setupSdkPaths(@NotNull Sdk sdk, @NotNull SdkModel sdkModel) {
         SdkModificator sdkModificator = sdk.getSdkModificator();
         sdkModificator.setVersionString(getVersionString(sdk));
-        sdkModificator.commitChanges();
 
         return true;
     }

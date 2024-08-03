@@ -2,14 +2,15 @@ import java.util.*
 
 fun properties(key: String) = project.findProperty(key).toString()
 
+group = properties("pluginGroup")
 version = properties("pluginVersion")
 description = properties("pluginDescription")
 
 plugins {
     id("java")
-    id("org.jetbrains.kotlin.jvm") version "1.9.23"
-    id("org.jetbrains.intellij") version "1.17.3"
-    id("org.jetbrains.changelog") version "2.2.0"
+    id("org.jetbrains.kotlin.jvm") version "2.0.0"
+    id("org.jetbrains.intellij") version "1.17.4"
+    id("org.jetbrains.changelog") version "2.2.1"
     id("org.jetbrains.grammarkit") version "2022.3.2.2"
     id("com.github.ben-manes.versions") version "0.51.0"
 
@@ -21,11 +22,11 @@ repositories {
 }
 
 dependencies {
-    implementation("org.projectlombok:lombok:1.18.32")
-    annotationProcessor("org.projectlombok:lombok:1.18.32")
+    implementation("org.projectlombok:lombok:1.18.34")
+    annotationProcessor("org.projectlombok:lombok:1.18.34")
 
     testImplementation("junit:junit:4.13.2")
-    testImplementation("org.mockito:mockito-core:5.11.0")
+    testImplementation("org.mockito:mockito-core:5.12.0")
 }
 
 sourceSets {
@@ -33,6 +34,10 @@ sourceSets {
         java.srcDir("src/main/kotlin")
         java.srcDir("src/generated/java")
     }
+}
+
+kotlin {
+    jvmToolchain(properties("kotlinJvmTarget").toInt())
 }
 
 intellij {
@@ -61,8 +66,6 @@ tasks {
     }
 
     withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-        kotlinOptions.jvmTarget = properties("kotlinJvmTarget")
-
         dependsOn(
             generateParser,
             generateLexer
@@ -102,6 +105,17 @@ tasks {
                 org.jetbrains.changelog.Changelog.OutputType.HTML
             )
         })
+    }
+
+    signPlugin {
+        if (listOf(
+                "JB_PLUGIN_SIGN_CERTIFICATE_CHAIN",
+                "JB_PLUGIN_SIGN_PRIVATE_KEY",
+                "JB_PLUGIN_SIGN_PRIVATE_KEY_PASSWORD").all { System.getenv(it) != null }) {
+            certificateChainFile.set(file(System.getenv("JB_PLUGIN_SIGN_CERTIFICATE_CHAIN")))
+            privateKeyFile.set(file(System.getenv("JB_PLUGIN_SIGN_PRIVATE_KEY")))
+            password.set(File(System.getenv("JB_PLUGIN_SIGN_PRIVATE_KEY_PASSWORD")).readText())
+        }
     }
 
     publishPlugin {

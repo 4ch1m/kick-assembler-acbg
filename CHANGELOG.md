@@ -1,3 +1,12 @@
+## [1.11.0]
+
+### Fixed
+- Kick Assembler SDK detection/setup
+
+### Changed
+- dependency upgrades
+- Gradle-wrapper update
+
 ## [1.10.0]
 
 ### Changed
